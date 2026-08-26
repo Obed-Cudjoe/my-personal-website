@@ -112,6 +112,7 @@ async function paystackInitialize(
       email: input.email,
       reference,
       channels: ["mobile_money"],
+      callback_url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/checkout/pay?order=${orderId}`,
       metadata: {
         order_id: orderId,
         phone: input.phone,

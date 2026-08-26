@@ -47,9 +47,20 @@ function load(): DbShape {
 function save() {
   if (!dirty) return;
   dirty = false;
-  fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
-  fs.writeFileSync(DB_PATH, JSON.stringify(load(), null, 2));
+  if (!fsWritable) return;
+  try {
+    fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
+    fs.writeFileSync(DB_PATH, JSON.stringify(load(), null, 2));
+  } catch (err) {
+    fsWritable = false;
+    console.warn(
+      "[store] filesystem not writable (serverless) — running in-memory. " +
+        "Orders will not persist across instances. Use the Supabase adapter for production."
+    );
+  }
 }
+
+let fsWritable = true;
 
 function mutate<T>(fn: () => T): T {
   const out = fn();
