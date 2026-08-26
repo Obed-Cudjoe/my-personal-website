@@ -1,0 +1,11 @@
+AI Pair Programmer: Code, Debug & Review
+
+### Code generation with full context
+Act as a senior [LANGUAGE] developer. Write a function to [TASK]. Context: [PASTE: language version, framework, existing function signatures, coding style]. Constraints: (1) handle edge cases [EDGE CASES], (2) no external dependencies beyond [ALLOWED], (3) follow [STYLE GUIDE], (4) include type hints/docstrings. First write 3 test cases with expected outputs, then the implementation, then any assumptions you made.
+
+### Debug with error + code
+Here is my code: [PASTE CODE]. Here is the error: [PASTE ERROR/STACK TRACE]. Here's what I expected to happen: [EXPECTED]. Diagnose in this order: (1) root cause in one sentence, (2) why it happens (the mechanism), (3) the fix with minimal changes, (4) a test that would have caught it. If multiple causes are possible, rank them. Do NOT rewrite the whole file.
+
+### Code review pass
+Review this code like a senior engineer doing a merge review: [PASTE CODE]. Report: (1) bugs (with the failing scenario), (2) security issues, (3) performance problems with complexity notes, (4) readability/maintainability, (5) missing tests. For each finding: severity (critical/major/minor), the fix, and whether it blocks merge. Be specific - quote the lines.
+

@@ -1,0 +1,11 @@
+Copy That Converts: Ads & Emails
+
+### Ad headline bank (AIDA)
+Write 15 ad headlines for [PRODUCT/SERVICE] targeting [AUDIENCE] who wants [OUTCOME] and fears [PAIN]. Use these proven patterns, 3 each: (1) specific-number results, (2) how-to, (3) before/after, (4) objection crusher, (5) curiosity gap. Max 8 words each. No clickbait the ad can't deliver on. Mark the 3 strongest.
+
+### Sales email - problem-agitate-solve
+Write a sales email for [OFFER] to my list of [AUDIENCE]. Use the Problem-Agitate-Solve structure: open with the problem they feel daily [PROBLEM], agitate with 2 sentences on what it costs them, present [OFFER] as the solution with 3 bullet benefits, add urgency [DEADLINE/SPOTS], close with one clear CTA. Keep it 180-220 words, plain language, no em-dash overuse, no 'unlock the power'.
+
+### Landing page hero + subhead
+Write 5 hero headline + subheadline pairs for [OFFER] to [AUDIENCE]. Each pair must: (1) promise one specific outcome, (2) name the audience, (3) remove one objection in the subhead (price, time, risk). Add a 5-word CTA button text for each. Formats: outcome-first, enemy-first, time-bound, cost-flip, contrarian.
+

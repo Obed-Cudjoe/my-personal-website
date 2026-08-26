@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 1 — Market Research &amp; Audience Pain Points | Digital Marketplace Launch Plan</title>
+<style>
+  :root {
+    --navy: #0f1b33;
+    --navy-2: #14264a;
+    --indigo: #3b5bdb;
+    --accent: #12b886;
+    --accent-soft: #e6faf2;
+    --amber: #f59f00;
+    --amber-soft: #fff4d6;
+    --red: #e03131;
+    --red-soft: #ffe3e3;
+    --blue: #1c7ed6;
+    --blue-soft: #e7f5ff;
+    --purple: #7048e8;
+    --purple-soft: #f0ebff;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --bg: #ffffff;
+    --bg-soft: #f8fafc;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(15,27,51,.08), 0 8px 24px rgba(15,27,51,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg-soft);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .page { max-width: 1060px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ---------- Header ---------- */
+  .report-header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 55%, #1c3d8f 100%);
+    color: #fff;
+    border-radius: 0 0 18px 18px;
+    padding: 56px 24px 48px;
+    margin-bottom: 40px;
+  }
+  .report-header .inner { max-width: 1060px; margin: 0 auto; }
+  .eyebrow {
+    display: inline-block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: #9fb6e8; font-weight: 700; margin-bottom: 14px; border: 1px solid rgba(159,182,232,.35);
+    padding: 4px 12px; border-radius: 999px;
+  }
+  .report-header h1 { font-size: 34px; line-height: 1.2; font-weight: 800; letter-spacing: -.01em; max-width: 860px; }
+  .report-header h1 .step { color: var(--accent); }
+  .report-header .subtitle { margin-top: 14px; font-size: 17px; color: #c9d6f2; max-width: 780px; }
+  .meta-chips { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+    padding: 6px 14px; border-radius: 999px; font-size: 13px; color: #e8eefc;
+  }
+  .chip b { color: #fff; font-weight: 700; }
+
+  /* ---------- Stat strip ---------- */
+  .stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: -20px auto 40px; padding: 0 24px; max-width: 1060px; }
+  .stat-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 18px 20px; display: flex; flex-direction: column; gap: 4px;
+  }
+  .stat-card .num { font-size: 30px; font-weight: 800; color: var(--navy); line-height: 1.1; }
+  .stat-card .num span { color: var(--accent); }
+  .stat-card .lbl { font-size: 13px; color: var(--muted); font-weight: 600; }
+
+  /* ---------- TOC ---------- */
+  .toc {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 28px 32px; margin-bottom: 44px;
+  }
+  .toc h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 16px; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px 24px; }
+  .toc a {
+    display: flex; gap: 10px; align-items: baseline; color: var(--ink); text-decoration: none;
+    padding: 7px 10px; border-radius: 8px; font-size: 14.5px;
+  }
+  .toc a:hover { background: var(--bg-soft); color: var(--indigo); }
+  .toc .n { color: var(--accent); font-weight: 800; font-size: 13px; min-width: 22px; }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 52px; }
+  .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .section-num {
+    background: var(--navy); color: #fff; font-weight: 800; font-size: 14px;
+    width: 34px; height: 34px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  h2 { font-size: 24px; font-weight: 800; color: var(--navy); letter-spacing: -.01em; }
+  .section-sub { color: var(--muted); font-size: 14.5px; margin: 0 0 22px 48px; }
+  h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin: 28px 0 12px; }
+  .lead { background: var(--bg-soft); border-left: 4px solid var(--indigo); padding: 16px 20px; border-radius: 0 10px 10px 0; margin-bottom: 24px; font-size: 15px; }
+
+  .callout {
+    background: var(--accent-soft); border: 1px solid #b2ecd7; border-radius: var(--radius);
+    padding: 18px 22px; margin: 22px 0;
+  }
+  .callout.amber { background: var(--amber-soft); border-color: #f5d78e; }
+  .callout.blue { background: var(--blue-soft); border-color: #b3d9f2; }
+  .callout.red { background: var(--red-soft); border-color: #f3b3b3; }
+  .callout .t { font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; color: var(--navy); }
+
+  /* ---------- Tables ---------- */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); margin: 14px 0 22px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+  thead th {
+    background: var(--navy); color: #fff; text-align: left; font-size: 12px; text-transform: uppercase;
+    letter-spacing: .08em; padding: 12px 16px; white-space: nowrap;
+  }
+  tbody td { padding: 11px 16px; border-top: 1px solid var(--line); vertical-align: top; }
+  tbody tr:nth-child(even) { background: var(--bg-soft); }
+  tbody tr:hover { background: #eef4ff; }
+  td.num, th.num { width: 44px; font-weight: 800; color: var(--accent); }
+  td.src { white-space: nowrap; }
+
+  .platform-badge {
+    display: inline-block; font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .p-reddit { background: #ffefe6; color: #d93a00; }
+  .p-quora { background: #fbeaea; color: #a11b18; }
+  .p-linkedin { background: #e8f1fb; color: #0a66c2; }
+  .p-twitter { background: #e7e7ea; color: #111; }
+  .p-facebook { background: #e8f0fb; color: #1877f2; }
+  .p-hn { background: #fff2e2; color: #c05600; }
+  .p-forums { background: #eef0f3; color: #4b5563; }
+  .p-market { background: #f0ebff; color: #5f3dc4; }
+  .p-amazon { background: #fef3e2; color: #b45309; }
+  .p-etsy { background: #fdeceb; color: #c2410c; }
+  .p-trust { background: #e4f6ef; color: #0e8a5f; }
+
+  /* ---------- Urgency badges ---------- */
+  .u-badge { display: inline-block; font-size: 11.5px; font-weight: 800; padding: 3px 10px; border-radius: 999px; letter-spacing: .02em; }
+  .u-critical { background: var(--red-soft); color: var(--red); }
+  .u-high { background: var(--amber-soft); color: #b07c00; }
+  .u-med { background: var(--blue-soft); color: var(--blue); }
+  .u-vhigh { background: var(--purple-soft); color: var(--purple); }
+
+  /* ---------- Theme cards ---------- */
+  .theme-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 20px 24px; margin-bottom: 14px; display: grid; grid-template-columns: 64px 1fr; gap: 18px;
+  }
+  .theme-card .rank {
+    width: 54px; height: 54px; border-radius: 12px; background: var(--navy); color: #fff;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.1;
+  }
+  .theme-card .rank .r { font-size: 11px; font-weight: 700; color: #9fb6e8; text-transform: uppercase; letter-spacing: .06em; }
+  .theme-card .rank .n { font-size: 22px; font-weight: 800; }
+  .theme-card h4 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .theme-card p { font-size: 14px; color: var(--muted); }
+  .theme-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .tag { background: var(--bg-soft); border: 1px solid var(--line); font-size: 12px; font-weight: 600; color: var(--muted); padding: 3px 10px; border-radius: 999px; }
+  .tag a { color: inherit; text-decoration: none; }
+  .tag a:hover { color: var(--indigo); }
+
+  /* ---------- Ranking rows ---------- */
+  .rank-row { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 10px; box-shadow: var(--shadow); }
+  .rank-medal {
+    font-size: 20px; font-weight: 800; color: #fff; background: var(--indigo); width: 42px; height: 42px;
+    border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .rank-medal.r1 { background: #e6a700; } .rank-medal.r2 { background: #9aa3b2; } .rank-medal.r3 { background: #b07c3e; }
+  .rank-row h4 { font-size: 15.5px; font-weight: 800; color: var(--navy); }
+  .rank-row .ev { font-size: 13.5px; color: var(--muted); margin-top: 3px; }
+  .rank-row .angle { font-size: 13px; font-weight: 700; color: var(--accent); margin-top: 6px; }
+
+  /* ---------- Pricing ---------- */
+  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0; }
+  .price-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px; }
+  .price-card .prod { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: var(--indigo); }
+  .price-card .expect { font-size: 13.5px; color: var(--muted); margin: 8px 0 12px; }
+  .price-card .rec { font-size: 22px; font-weight: 800; color: var(--navy); }
+  .price-card .rec small { font-size: 13px; color: var(--muted); font-weight: 600; }
+
+  /* ---------- Product map ---------- */
+  .map-row { display: grid; grid-template-columns: 190px 150px 1fr; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; box-shadow: var(--shadow); align-items: center; }
+  .map-row .theme { font-weight: 700; font-size: 14px; color: var(--navy); }
+  .map-row .type { font-size: 12.5px; font-weight: 800; padding: 5px 10px; border-radius: 999px; text-align: center; white-space: nowrap; }
+  .type-pack { background: var(--blue-soft); color: var(--blue); }
+  .type-ebook { background: var(--purple-soft); color: var(--purple); }
+  .type-bundle { background: var(--accent-soft); color: #0b8a62; }
+  .type-ops { background: var(--amber-soft); color: #b07c00; }
+  .map-row .why { font-size: 13.5px; color: var(--muted); }
+
+  /* ---------- Launch catalog ---------- */
+  .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; }
+  .cat-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; position: relative; }
+  .cat-card .cat-num { position: absolute; top: -10px; left: 16px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 999px; }
+  .cat-card h4 { font-size: 15px; font-weight: 800; color: var(--navy); margin-top: 4px; }
+  .cat-card .prices { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .cat-card .p { font-size: 12.5px; font-weight: 700; background: var(--bg-soft); border: 1px solid var(--line); padding: 3px 9px; border-radius: 8px; color: var(--ink); }
+  .cat-card .p b { color: var(--accent); }
+
+  /* ---------- Lists ---------- */
+  ul.clean, ol.clean { margin: 8px 0 16px 22px; }
+  ul.clean li, ol.clean li { margin-bottom: 7px; font-size: 14.5px; }
+  .two-col { columns: 2; column-gap: 40px; }
+  @media (max-width: 700px) { .two-col { columns: 1; } }
+
+  /* ---------- Sources ---------- */
+  .src-block { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; box-shadow: var(--shadow); }
+  .src-block p { font-size: 13.5px; color: var(--muted); margin-bottom: 10px; }
+
+  /* ---------- Footer ---------- */
+  .report-footer { margin-top: 60px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12.5px; color: var(--muted); }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .report-header { border-radius: 0; }
+    .table-wrap, .theme-card, .rank-row, .price-card, .cat-card, .map-row, .toc, .stat-card, .callout { box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+    .report-header { padding: 30px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="report-header">
+  <div class="inner">
+    <span class="eyebrow">Digital Marketplace — Launch Research · Step 1 of 5</span>
+    <h1>Market Research &amp; <span class="step">Audience Pain Points</span></h1>
+    <p class="subtitle">What professionals who use AI — and professionals who buy ebooks — actually complain about, what they'll pay for, and exactly which prompt packs and ebooks a new digital store should launch first.</p>
+    <div class="meta-chips">
+      <span class="chip"><b>Date:</b> Aug 25, 2026</span>
+      <span class="chip"><b>Scope:</b> 8 platforms · 62 documented pain points</span>
+      <span class="chip"><b>Product:</b> AI prompt packs + practical ebooks</span>
+      <span class="chip"><b>Prepared for:</b> Marketplace launch plan</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= STATS ================= -->
+<div class="stat-strip">
+  <div class="stat-card"><div class="num">62<span>+</span></div><div class="lbl">Documented pain points (41 prompt · 21 ebook)</div></div>
+  <div class="stat-card"><div class="num">8</div><div class="lbl">Research platforms covered</div></div>
+  <div class="stat-card"><div class="num">8</div><div class="lbl">Themes ranked by frequency × urgency</div></div>
+  <div class="stat-card"><div class="num">5</div><div class="lbl">Job categories recommended for launch</div></div>
+  <div class="stat-card"><div class="num">5</div><div class="lbl">Ebook topics mapped to bundles</div></div>
+</div>
+
+<div class="page">
+
+<!-- ================= TOC ================= -->
+<nav class="toc" aria-label="Table of contents">
+  <h3>Contents</h3>
+  <div class="toc-grid">
+    <a href="#summary"><span class="n">0</span> Executive Summary</a>
+    <a href="#painpoints"><span class="n">1</span> Pain-Point Research Report (62)</a>
+    <a href="#clusters"><span class="n">2</span> Pain-Point Cluster Map — 8 Themes</a>
+    <a href="#competitors"><span class="n">3</span> Competitor Complaint Summary</a>
+    <a href="#categories"><span class="n">4</span> Top 5 Job Categories for Launch</a>
+    <a href="#ebooks"><span class="n">5</span> Top 5 Ebook Topics &amp; Bundles</a>
+    <a href="#pricing"><span class="n">6</span> Pricing Insights</a>
+    <a href="#mapping"><span class="n">7</span> Product-Type Mapping</a>
+    <a href="#sources"><span class="n">8</span> Source Index</a>
+  </div>
+</nav>
+
+<!-- ================= 0. EXEC SUMMARY ================= -->
+<section id="summary">
+  <div class="section-head"><span class="section-num">0</span><h2>Executive Summary</h2></div>
+  <p class="section-sub">The one-page version: what the market wants and what to sell first.</p>
+
+  <p class="lead">Professionals who use AI daily are <b>frustrated, not abandoning AI</b> — they get generic output from vague prompts, spend more time editing than they save, and fear hallucinations in high-stakes work. Meanwhile, ebook buyers are <b>price-fatigued and quality-starved</b>: they refuse to pay $15–$43 for Kindle ebooks, distrust the "AI slop" flooding stores, and cannot find short, practical, job-specific guides instead of 300-page textbooks. Delivery friction (broken links, no support, format confusion) is the fastest trust-killer in the category.</p>
+
+  <div class="callout">
+    <div class="t">The winning formula for a first launch</div>
+    <ul class="clean" style="margin-bottom:0;">
+      <li><b>Product:</b> Niche, tested, <i>documented</i> prompt packs (10–40 prompts per job role) + short (30–80 page) practical ebooks, sold as <b>bundles</b> with example outputs, workflows, and both PDF + EPUB formats — delivered instantly with human support.</li>
+      <li><b>Top 5 job categories:</b> Freelancers &amp; Solopreneurs → Marketers &amp; Copywriters → Small Business Owners → Content Creators → Developers &amp; Data Analysts <span style="color:var(--muted)">(runners-up: HR/Recruiters, Teachers, Lawyers)</span>.</li>
+      <li><b>Price anchors:</b> Ebooks $4.99–$9.99 · Niche prompt packs $12–$29 · Bundles $29–$49 · <b>Never</b> sell "single $1.99 random prompts."</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 1. PAIN POINTS ================= -->
+<section id="painpoints">
+  <div class="section-head"><span class="section-num">1</span><h2>Pain-Point Research Report — 62 Documented Pain Points</h2></div>
+  <p class="section-sub">Method: public-platform research across Reddit (25+ subreddits), Quora, LinkedIn, X/Twitter, Facebook groups, Hacker News &amp; AI communities, ebook reader forums, and marketplace review platforms. Each pain point is 1–2 sentences with the source platform labeled.</p>
+
+  <h3>1A · AI Prompt Pain Points — "I use AI, but my prompts get me garbage" (41)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th class="num">#</th><th>Pain point</th><th>Source platform</th></tr></thead>
+      <tbody>
+        <tr><td class="num">P1</td><td>Users complain ChatGPT acts as an "overly flattering yes man" — it praises every idea, even self-contradictory ones, so people must build elaborate "uncertainty protocols" just to get honest feedback.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/ChatGPT</span></td></tr>
+        <tr><td class="num">P2</td><td>"Everyone uses ChatGPT like it's Google. It's not. Here's what I learned after months of prompt fails" — users routinely use the tool wrong and blame the tool.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/ChatGPT</span></td></tr>
+        <tr><td class="num">P3</td><td>"You see folks asking ChatGPT vague stuff like 'Write me a marketing plan' and then getting disappointed… No structure, no context, no direction = generic output. Of course it's going to suck."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/ChatGPTPromptGenius</span></td></tr>
+        <tr><td class="num">P4</td><td>A working copywriter: "the quality is kind of shit. Sometimes I can curate hyper-specific prompts… but it doesn't always work and quality is inevitably compromised. I still find myself having to meticulously curate the content."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/copywriting</span></td></tr>
+        <tr><td class="num">P5</td><td>Same copywriter thread: "the amount of prompting you need to do makes it not worthwhile," and the model is "confidently wrong" — it fabricates details, making it "highly questionable" for any fact-based task.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/copywriting</span></td></tr>
+        <tr><td class="num">P6</td><td>A freelancer's first ChatGPT proposal included things he never mentioned (a "custom theme"), a wildly inflated budget (250 hours for a 10-page site vs. his 80), and language that felt "off" and needed a full rewrite in his own voice.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/freelance</span></td></tr>
+        <tr><td class="num">P7</td><td>"ChatGPT sounds generic… it doesn't sound like me. Everybody has their way of talking," so freelancers edit AI drafts repeatedly until they "no longer resemble what the machine originally wrote."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/freelance</span></td></tr>
+        <tr><td class="num">P8</td><td>Freelancer who tested 100+ prompt variations: one-size-fits-all prompts ("Write me a proposal," "Make it more professional") "kind of worked, but not consistently. The responses were too generic" — he had to build a personal prompt system to get reliable output.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Freelancers</span></td></tr>
+        <tr><td class="num">P9</td><td>Marketer on introducing ChatGPT to a team: "Ok, but how much time does that take? I found it faster to just write [the] draft myself rather than fiddle with 'meh' output from the ai."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/marketing</span></td></tr>
+        <tr><td class="num">P10</td><td>ChatGPT output is "boring copy" and generic ad copy; agencies that swapped writers for ChatGPT end up with "tone-deaf, generic output. Clients can tell, even if leadership can't."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/marketing</span></td></tr>
+        <tr><td class="num">P11</td><td>"Is ChatGPT incompetent or do I suck at prompt engineering?" — results have been "suboptimal at best, dangerously wrong at worst"; devs report it "fails as soon as you need it to do anything remotely complicated."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/webdev</span></td></tr>
+        <tr><td class="num">P12</td><td>Developer who gave up on AI: results were "slightly wrong, had mistakes, or plainly the usage it suggested did not exist… if it takes so freaking long to prompt it and then have to review their output… what is the point?"</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/programming</span></td></tr>
+        <tr><td class="num">P13</td><td>Community warning: "DO NOT attempt to have chatgpt write your whole program… it may make very subtle errors (that will still compile/run) but may not be caught until there are huge problems in production."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/singularity</span></td></tr>
+        <tr><td class="num">P14</td><td>"ChatGPT ruined me as a programmer" — generated code "needs a lot of editing," is rarely the optimal solution, and iterating with the model "kept reintroducing bugs."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/ChatGPT</span></td></tr>
+        <tr><td class="num">P15</td><td>Teachers complain AI lesson plans are generic and follow a detectable "AI tell" (em-dashes, "it's not just X, it's Y," "And the worst part?") so AI-written work is instantly recognizable — one school banned ChatGPT for lesson planning entirely.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Teachers</span></td></tr>
+        <tr><td class="num">P16</td><td>"Your plans are what YOU plan to do… This is not something ChatGPT can do, because it can't read your mind" — teachers need prompts that inject their context, and generic prompts can't.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Teachers</span></td></tr>
+        <tr><td class="num">P17</td><td>Lawyers: "boy, does it hallucinate" — ChatGPT generates wrong answers, then hallucinates fake citations when asked to support them; "Anyone solely relying on it is in for a rude awakening."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/LawFirm</span></td></tr>
+        <tr><td class="num">P18</td><td>"Fully 50% of the time it hallucinates statutes"; even with "Do not summarize!" it summarizes anyway and "the legalese does not have the same legal meaning as the statute."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Lawyertalk</span></td></tr>
+        <tr><td class="num">P19</td><td>Lawyers report it "miscite[s] cases to mean the exact opposite of what they mean," and clients who run their own prompts second-guess attorneys — legal pros need prompts engineered to avoid hallucination.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Lawyertalk</span></td></tr>
+        <tr><td class="num">P20</td><td>Hiring manager: "when I did use ChatGPT it made them [job descriptions] sound generic unless I spent 30+ minutes having AI tailor the JD" — and generic JDs attract the wrong candidates.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/recruiting</span></td></tr>
+        <tr><td class="num">P21</td><td>Recruiter: "you can get a good base from chat gpt, but it'll have to be tailored as it will be generic" — every JD still needs hours of human rework.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/recruiting</span></td></tr>
+        <tr><td class="num">P22</td><td>"We can tell when you use ChatGPT… I'm reading identical responses over and over and over again" — generic AI applications get discarded; candidates don't know their "optimized" outputs all sound the same.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/CAStateWorkers</span></td></tr>
+        <tr><td class="num">P23</td><td>Recruiter: AI-generated applications "sound overly polished or generic… when everyone uses it the same way, applications start blending together."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/UNpath</span></td></tr>
+        <tr><td class="num">P24</td><td>User ran a "team of experts" prompt and got a hiring plan instead of code — overly abstract, convoluted prompts misfire; commenters confirmed "your prompt is super abstract" and the model defaults to the wrong output.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/OpenAI</span></td></tr>
+        <tr><td class="num">P25</td><td>"Why does AI feel 'generic' even when the prompt looks fine?" — community consensus: unclear role, unclear objective, missing context; "I've definitely been that person throwing vague prompts at ChatGPT and then getting mad when it spits out corporate speak."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/ArtificialInteligence</span></td></tr>
+        <tr><td class="num">P26</td><td>Recurring Quora threads like "How do I write better prompts for ChatGPT to improve the results?" show non-technical professionals actively seeking prompt structure guidance because their vague prompts yield irrelevant answers.</td><td class="src"><span class="platform-badge p-quora">Quora</span></td></tr>
+        <tr><td class="num">P27</td><td>"Most freelance prompt lists are garbage. 'Write a professional email' tells ChatGPT nothing and gets you nothing" — generic templates are worthless; job-specific, context-rich prompts are the gap.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/ChatGPTPromptGenius</span></td></tr>
+        <tr><td class="num">P28</td><td>"Kept watching small business owners try ChatGPT, get bland output, and give up. Most 'act as a marketing expert' prompts floating around online are too vague to actually work."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/SideProject</span></td></tr>
+        <tr><td class="num">P29</td><td>Teachers demonstrably pay for job-specific prompt packs ($19 for 50 lesson-plan/rubric/sub-plan prompts across 10 categories) — direct proof of demand for role-specific packs.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Teachers</span></td></tr>
+        <tr><td class="num">P30</td><td>LinkedIn professionals share post-generation workflows; the consensus in these threads: "AI-generated posts that fail typically fail because the prompt was generic."</td><td class="src"><span class="platform-badge p-linkedin">LinkedIn</span></td></tr>
+        <tr><td class="num">P31</td><td>Professionals on LinkedIn openly ask for and share ChatGPT prompt recipes for professional tasks (career profiles, headshots, resume bullets) — role-based prompts are a requested, shareable commodity.</td><td class="src"><span class="platform-badge p-linkedin">LinkedIn</span></td></tr>
+        <tr><td class="num">P32</td><td>X/Twitter thread: "Prompt Engineering Isn't Dead. You're Just Doing It Wrong. My best prompts are around two thousand words long" — even advanced users discover their prompts were too shallow; depth/context is the missing skill.</td><td class="src"><span class="platform-badge p-twitter">X / Twitter</span></td></tr>
+        <tr><td class="num">P33</td><td>Small-business owners in Facebook AI groups (e.g., "ChatGPT for business owners") ask "practical questions about email, content, and basic automation" and want prompt help; meanwhile members complain the groups are flooded with "comment YES for the prompt" engagement bait and the algorithm hides the useful posts.</td><td class="src"><span class="platform-badge p-facebook">Facebook groups</span></td></tr>
+        <tr><td class="num">P34</td><td>Content creators: "Generic AI scripts fail because they start from a blank prompt instead of proven YouTube patterns"; ChatGPT produces "generic text you must heavily edit," with creators spending 30–45 minutes of editing per script.</td><td class="src"><span class="platform-badge p-forums">AI creator communities</span></td></tr>
+        <tr><td class="num">P35</td><td>"Most 'YouTube prompts' fail because they ask for outputs (titles, scripts, thumbnails) without building the stepping stones the model needs… That's not a YouTube strategy. That's autocomplete."</td><td class="src"><span class="platform-badge p-forums">AI creator communities</span></td></tr>
+        <tr><td class="num">P36</td><td>Hacker News: "Ask HN: Is prompt engineering just snake oil?" — developer community deeply skeptical of paying for prompt products; any paid prompt product must prove methodology, not just text.</td><td class="src"><span class="platform-badge p-hn">Hacker News</span></td></tr>
+        <tr><td class="num">P37</td><td>"Prompt engineering in the way it's sold on social media is a total scam. Nobody is going to pay you to come up with creative ways to talk to an AI" — buyers feel ripped off by prompt courses/packs that teach nothing beyond what free docs cover.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/OpenAI</span></td></tr>
+        <tr><td class="num">P38</td><td>A prompt seller's own post-mortem: "If user can get 80%+ of the value by asking the AI directly, your prompt has NO commercial value" — most packs on the market fail this test and deserve the skepticism.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/PromptEngineering</span></td></tr>
+        <tr><td class="num">P39</td><td>"Prompt packs aren't worth the money. They contain so many restated, mainly low quality or obscure prompts"; "Prompts will be outdated in the next update or won't be as effective in a few weeks" — buyers cite bloat, repetition, and staleness.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/PromptEngineering</span></td></tr>
+        <tr><td class="num">P40</td><td>"Prompt selling… They aren't business secrets, they're words"; $149 prompt-engineering courses called "a scam" — the market punishes sellers who price bare text like a trade secret.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/StableDiffusion</span></td></tr>
+        <tr><td class="num">P41</td><td>"How to organize AI prompts?" — users want organized, copy-paste-ready prompt systems; paid Notion prompt templates are resisted: "templates were paid and then steep learning curve, that's definitely a no no for me."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Notion, r/productivity</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1B · Ebook Pain Points — "Too expensive, too long, too broken" (21)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th class="num">#</th><th>Pain point</th><th>Source platform</th></tr></thead>
+      <tbody>
+        <tr><td class="num">E1</td><td>"How are you buying all of these books? They're so expensive" — Kindle readers now only buy $2 daily deals, borrow via Libby, or wait months for price drops; full-price ebook purchases are the exception.</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E2</td><td>"$43 for an ebook by John Hopkins University Press" — academic/professional ebooks are priced like luxury goods, pushing professionals to pirate or skip them.</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E3</td><td>"Is it just me, or have Kindle books gotten way more expensive?… I saw $19 for a &lt;200 page novel the other day!"</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E4</td><td>"Kindle ebooks are pricier than hard copy books… Amazon's pricing model has trained me to never ever pay full price for an ebook."</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E5</td><td>"A digital book, that costs $0 to make, is more expensive than a printed hardcover, and almost double the price of a paperback. This is ridiculous."</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E6</td><td>"No Kindle book should cost more than $10" — $17 for a bestselling ebook is called "highway robbery"; readers also resent Amazon's "revocable lease" model for ebooks.</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E7</td><td>"Amazon ebook quality is often horrible" — paid ebooks full of typos, broken formatting, missing punctuation, and OCR errors (one reader found every "I'" replaced with "P"); readers pay print prices for scan-quality files.</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E8</td><td>Self-published ebooks are "generally poorly edited… full of typos, errors, repeating words and awkward syntax"; the market is "a swamp of content that is 90% unreadable" and readers can't find decent short practical titles.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/books</span></td></tr>
+        <tr><td class="num">E9</td><td>Kindle Unlimited is "full of filler"; "95% of what's on KU is basically shovelware in book form"; recent threads call it "99% AI slop" — readers can't trust the store to surface quality.</td><td class="src"><span class="platform-badge p-amazon">Reddit · r/kindle</span></td></tr>
+        <tr><td class="num">E10</td><td>"KU is the garbage dump that charges readers a $10/mth fee" — even subscribers say quality "ranged from meh to terrible" and the "Free on Kindle Unlimited" tag is now read as an indie-quality warning.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/books, r/selfpublish</span></td></tr>
+        <tr><td class="num">E11</td><td>"I spent the last few months finishing a giant 700 page book… I was convinced as soon as I finished I could start making kick ass apps… boy was I wrong" — huge textbooks don't convert into job skills; readers feel "theory hell."</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/learnprogramming</span></td></tr>
+        <tr><td class="num">E12</td><td>"Textbooks… can be so damn dry… prepare to slog through that thing" — learners want casual, practical, project-based guides over 300-page academic tomes.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/learnprogramming</span></td></tr>
+        <tr><td class="num">E13</td><td>Students/learners face $300 hardcover textbooks with digital copies as the "cheap" option — cost is a barrier even at "discount" prices.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/CollegeRant</span></td></tr>
+        <tr><td class="num">E14</td><td>Professors report students refuse to buy even $25 ebooks; publishers hunt down pirated PDFs instead of offering affordable alternatives — price, not laziness, drives the behavior.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Professors</span></td></tr>
+        <tr><td class="num">E15</td><td>Budget readers hunt free ebooks but "take your chances on quality… there are quite a few that are unreadable word salads" — free alternatives are too low-quality to learn from.</td><td class="src"><span class="platform-badge p-reddit">Reddit · r/Frugal</span></td></tr>
+        <tr><td class="num">E16</td><td>"I've bought a digital image but never received [it]" — seller vanished after payment, refund process was buried, and the buyer eventually got Etsy support only after escalation; digital delivery failures are common and painful.</td><td class="src"><span class="platform-badge p-etsy">Reddit · r/Etsy</span></td></tr>
+        <tr><td class="num">E17</td><td>"Bought a digital download and never received anything from the seller… refunds are not possible with digital downloads" — buyers lose money with no recourse when a digital product isn't delivered.</td><td class="src"><span class="platform-badge p-etsy">Reddit · r/Etsy</span></td></tr>
+        <tr><td class="num">E18</td><td>Digital downloads on Etsy are inaccessible from the mobile app — buyers must use a desktop browser to get their files, and confused customers ("I don't own a computer!") blame the seller.</td><td class="src"><span class="platform-badge p-etsy">Reddit · r/Etsy</span></td></tr>
+        <tr><td class="num">E19</td><td>Buyers repeatedly purchase digital downloads expecting a physical item ("I don't receive my package"), causing refund demands and 1-star reviews — digital product UX confuses non-technical buyers.</td><td class="src"><span class="platform-badge p-etsy">Reddit · r/EtsySellers</span></td></tr>
+        <tr><td class="num">E20</td><td>Gumroad buyer: "Paid for a product I didn't receive… the product never showed up in my library. Contacted support several times… Gumroad was very unhelpful" ($200 product, seller unresponsive, platform refused to intervene).</td><td class="src"><span class="platform-badge p-trust">Trustpilot · Gumroad</span></td></tr>
+        <tr><td class="num">E21</td><td>"Took my money. No receipt. No product. No help." — and "$72 for a bunch of useless PDFs. Not happy, the seller isn't even responding" — digital marketplaces leave buyers unprotected when sellers ghost.</td><td class="src"><span class="platform-badge p-trust">Trustpilot / BBB · Gumroad</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 2. CLUSTER MAP ================= -->
+<section id="clusters">
+  <div class="section-head"><span class="section-num">2</span><h2>Pain-Point Cluster Map — 8 Themes Ranked by Urgency</h2></div>
+  <p class="section-sub">Themes ranked by combined frequency (how often the pain appears) and urgency (how badly it hurts the buyer today).</p>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">1</span></div>
+    <div>
+      <h4>Vague prompts → generic, unusable output</h4>
+      <p>People have the tool but lack the prompt craft: no role, no context, no format, no constraints. Hours lost daily; the most repeated complaint in every community.</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>Very high</b></span>
+        <span class="u-badge u-vhigh">Urgency: High</span>
+        <span class="tag">Representative: P3 · P8 · P25 · P27 · P28 · P34</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">2</span></div>
+    <div>
+      <h4>The editing tax — AI output doesn't sound like me / on-brand</h4>
+      <p>Copywriters, freelancers, marketers, and creators spend as long editing as writing. Kills the ROI perception of AI — "faster to write it myself."</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>Very high</b></span>
+        <span class="u-badge u-vhigh">Urgency: High</span>
+        <span class="tag">Representative: P4 · P7 · P10 · P34</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">3</span></div>
+    <div>
+      <h4>Hallucination &amp; accuracy fear in high-stakes roles</h4>
+      <p>Lawyers, developers, recruiters, and teachers can't trust output for client-facing or production work. Reputational and legal risk — the most emotionally intense complaints.</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>High</b></span>
+        <span class="u-badge u-critical">Urgency: Critical</span>
+        <span class="tag">Representative: P13 · P17 · P18 · P22</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">4</span></div>
+    <div>
+      <h4>Ebook price fatigue</h4>
+      <p>Readers refuse $10–$43 ebooks and are trained to wait for $0.99–$1.99 deals. Affordable, practical guides sit in an empty middle: above "cheap," below "highway robbery."</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>Very high</b></span>
+        <span class="u-badge u-high">Urgency: High</span>
+        <span class="tag">Representative: E1 · E4 · E5 · E6</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">5</span></div>
+    <div>
+      <h4>Ebook quality crisis &amp; trust deficit</h4>
+      <p>Typos, OCR garbage, AI slop, KU filler. Buyers can't distinguish quality without reading samples — and assume the worst of self-published titles.</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>High</b></span>
+        <span class="u-badge u-high">Urgency: High</span>
+        <span class="tag">Representative: E7 · E9 · E10</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">6</span></div>
+    <div>
+      <h4>The "300-page textbook" problem</h4>
+      <p>Professionals want short, job-specific, actionable guides. Giant books don't convert into skills — readers finish them and still feel lost ("theory hell").</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>Medium–high</b></span>
+        <span class="u-badge u-high">Urgency: High</span>
+        <span class="tag">Representative: E11 · E12 · E14</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">7</span></div>
+    <div>
+      <h4>Delivery &amp; format friction</h4>
+      <p>Broken links, files never received, no support, desktop-only downloads, PDF-vs-EPUB-vs-Notion confusion. The #1 instant trust-killer in the category — and the cheapest to fix.</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>Medium</b></span>
+        <span class="u-badge u-critical">Urgency: Critical</span>
+        <span class="tag">Representative: E17 · E20 · E21 · E18</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card">
+    <div class="rank"><span class="r">Rank</span><span class="n">8</span></div>
+    <div>
+      <h4>Marketplace skepticism ("prompt products are scams")</h4>
+      <p>Bloat, restated prompts, overpriced courses, Etsy bans, and endless free alternatives. Any new store must explicitly defuse this — with proof, not promises.</p>
+      <div class="theme-meta">
+        <span class="tag">Frequency: <b>Medium–high</b></span>
+        <span class="u-badge u-critical">Urgency: Critical for positioning</span>
+        <span class="tag">Representative: P37 · P38 · P39 · P40</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. COMPETITORS ================= -->
+<section id="competitors">
+  <div class="section-head"><span class="section-num">3</span><h2>Competitor Complaint Summary — What Buyers Hate About Existing Stores</h2></div>
+  <p class="section-sub">Documented complaints about prompt marketplaces (PromptBase, Etsy, Gumroad packs, "mega packs") and ebook marketplaces (Amazon Kindle, KU, Gumroad, Etsy digital).</p>
+
+  <div class="two-col">
+    <h3>Prompt marketplaces &amp; prompt products</h3>
+    <ul class="clean">
+      <li><b>Bloat &amp; repetition.</b> Packs of 10,000 prompts are "so many restated, mainly low quality or obscure prompts"; buyers feel cheated ("shit is free!! why would you pay for prompts"). <span class="tag">r/PromptEngineering · r/EntrepreneurRideAlong</span></li>
+      <li><b>"Placebo prompting."</b> Most packs are samey "act like an expert…" prompts that "engineer a style, not expertise"; they fail the value test — "if the user can get 80%+ of the value by asking the AI directly, the prompt has NO commercial value." <span class="tag">r/PromptEngineering</span></li>
+      <li><b>Staleness.</b> "Prompts will be outdated in the next update or won't be as effective in a few weeks" — packs offer no updates or versioning. <span class="tag">r/PromptEngineering</span></li>
+      <li><b>Price gouging on courses.</b> $149 "prompt engineering" courses and $1,500 "Midjourney master plans" are widely called scams, poisoning the category. <span class="tag">r/StableDiffusion · r/OpenAI</span></li>
+      <li><b>Platform economics.</b> PromptBase takes 20%, caps new sellers at $4.99/listing, and is flooded with low-effort AI-generated prompts (it now declines them); Etsy <b>bans standalone prompt packs</b> (policy since 2024) and its digital-download UX is desktop-only with no app access. <span class="tag">PromptBase · Etsy policy</span></li>
+      <li><b>No quality guarantees.</b> Buyers can't verify a prompt works before purchase; sellers present "every prompt as guaranteed to work perfectly" while undocumented results vary. <span class="tag">Industry seller guides</span></li>
+      <li><b>Race to the bottom.</b> Etsy prompt listings sell for $0.91–$4.88 (with "discounts" from $7.62) — a price war that signals zero value. <span class="tag">Etsy marketplace listings</span></li>
+    </ul>
+
+    <h3>Ebook marketplaces</h3>
+    <ul class="clean">
+      <li><b>Publishers price ebooks like print.</b> Readers repeatedly blame publishers ("Take it up with the publishers who set ebook prices") and have been trained to never pay full price. <span class="tag">r/kindle</span></li>
+      <li><b>Paid-for quality failures.</b> Typos, broken formatting, OCR scans sold at print prices; Amazon itself now removes "critical issue" ebooks. <span class="tag">r/kindle · r/selfpublish</span></li>
+      <li><b>KU = filler/slop.</b> "95% shovelware," "99% AI slop," recommendation algorithms push garbage; the "Free on Kindle Unlimited" tag has become a stigma. <span class="tag">r/kindle · r/books · r/selfpublish</span></li>
+      <li><b>No curation for practical skills.</b> Readers want short job-specific guides and can't find them among 300-page textbooks and romance-genre filler. <span class="tag">r/learnprogramming · r/kindle</span></li>
+      <li><b>Ghost-seller risk on Gumroad.</b> "Paid for a product I didn't receive… platform refused to intervene"; "Took my money. No receipt. No product. No help." Buyers are unprotected when sellers vanish. <span class="tag">Trustpilot · BBB</span></li>
+      <li><b>Digital-vs-physical confusion &amp; refund blocks.</b> Etsy digital buyers expect physical items, can't download on mobile, and get no refunds on digital goods. <span class="tag">r/Etsy · r/EtsySellers</span></li>
+      <li><b>Format inflexibility.</b> Sellers ship only PDF or only EPUB; buyers want both (EPUB for e-readers, PDF for technical content), plus copy-paste-friendly Notion/Word options for prompts. <span class="tag">r/Piracy · r/humblebundles · r/Notion</span></li>
+    </ul>
+  </div>
+
+  <div class="callout red">
+    <div class="t">Competitor takeaway</div>
+    The market is punishing <b>volume without value</b>. The winning position: small, tested, documented niche packs + short professional ebooks + instant delivery + support. Everything buyers say is missing.
+  </div>
+</section>
+
+<!-- ================= 4. JOB CATEGORIES ================= -->
+<section id="categories">
+  <div class="section-head"><span class="section-num">4</span><h2>Top 5 Job Categories for Launch</h2></div>
+  <p class="section-sub">Ranked by demand evidence: frequency of documented pain, willingness to pay, and proof of purchase in the wild.</p>
+
+  <div class="rank-row">
+    <div class="rank-medal r1">1</div>
+    <div style="flex:1">
+      <h4>Freelancers &amp; Solopreneurs</h4>
+      <p class="ev">Most-repeated pain cluster (proposals, outreach, scope creep, invoice chasing, client messages). r/freelance, r/Freelancers (100+ prompts tested), r/ChatGPTPromptGenius; multiple seller posts with proven engagement.</p>
+      <p class="angle">→ Product angle: "Freelance Client Machine" — proposals, cold outreach, scope-creep replies, invoice chasers, testimonials.</p>
+    </div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-medal r2">2</div>
+    <div style="flex:1">
+      <h4>Marketers &amp; Copywriters</h4>
+      <p class="ev">r/marketing + r/copywriting threads on generic/boring output; PromptBase's own data: "ChatGPT prompts for blogging, SEO, business, marketing… sell the most."</p>
+      <p class="angle">→ Product angle: "Copy That Converts" — ads, emails, landing pages, social captions with anti-generic constraints.</p>
+    </div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-medal r3">3</div>
+    <div style="flex:1">
+      <h4>Small Business Owners</h4>
+      <p class="ev">r/SideProject (100 SMB prompts — strong engagement), Facebook groups ("ChatGPT for business owners" self-selects "practical questions about email, content, automation"), multiple SMB prompt guides monetized at $19–29.</p>
+      <p class="angle">→ Product angle: prompt pack + ebook bundle — marketing, review responses, SOPs, customer service, ops.</p>
+    </div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-medal">4</div>
+    <div style="flex:1">
+      <h4>Content Creators (YouTube / TikTok / IG)</h4>
+      <p class="ev">Creator communities uniformly complain scripts sound like AI; "generic opening 'In today's video…'" is the #1 cited failure; creators pay for script/title/thumbnail systems.</p>
+      <p class="angle">→ Product angle: "Creator Script System" — hooks, retention-structured scripts, titles, thumbnails, Shorts.</p>
+    </div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-medal">5</div>
+    <div style="flex:1">
+      <h4>Developers &amp; Data Analysts</h4>
+      <p class="ev">r/webdev / r/programming / r/singularity threads; dev prompt packs command the <b>highest prices</b> ($20–99/pack) because ROI is immediate; SQL/analyst prompt content is heavily consumed.</p>
+      <p class="angle">→ Product angle: prompt pack + ebook — pair-programming prompts, debugging, SQL generation, code review, production-safety constraints.</p>
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <div class="t">Runners-up — fast-follow wave 2</div>
+    <ul class="clean" style="margin-bottom:0;">
+      <li><b>HR / Recruiters</b> — JD-writing pain is explicit and repeated (r/recruiting, r/CAStateWorkers); 63% of recruiters use AI but struggle with prompts.</li>
+      <li><b>Teachers</b> — $19 role-specific packs already selling (r/Teachers).</li>
+      <li><b>Lawyers</b> — heavy usage for drafting, high caution (r/LawFirm, r/Lawyertalk).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 5. EBOOK TOPICS ================= -->
+<section id="ebooks">
+  <div class="section-head"><span class="section-num">5</span><h2>Top 5 Ebook Topics for Launch — Overlapping Prompt Categories</h2></div>
+  <p class="section-sub">Short (30–80 page) practical ebooks, each mapped to a prompt pack so the two can be sold as bundles.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Ebook topic</th><th>Overlapping prompt pack</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="num">1</td>
+          <td><b>"The Freelancer's AI Client Machine: Proposals, Outreach &amp; Money Talks"</b></td>
+          <td>Freelance Client Machine pack</td>
+          <td>Freelance pain is the most documented; the ebook teaches the <i>method</i> (context → constraints → voice), the pack delivers the copy-paste prompts.</td>
+        </tr>
+        <tr>
+          <td class="num">2</td>
+          <td><b>"Human-Sounding AI Copy: Writing That Doesn't Scream 'ChatGPT'"</b></td>
+          <td>Copy That Converts pack</td>
+          <td>Attacks the #2 theme (editing tax + generic voice) for marketers/copywriters; teaches anti-"AI tell" editing.</td>
+        </tr>
+        <tr>
+          <td class="num">3</td>
+          <td><b>"The Small Business AI Playbook: Marketing, Reviews &amp; Ops in Your Spare Time"</b></td>
+          <td>SMB Operator pack</td>
+          <td>SMBs are the least technical buyers — they need the walkthrough <i>and</i> the prompts; the strongest bundle upsell.</td>
+        </tr>
+        <tr>
+          <td class="num">4</td>
+          <td><b>"The Creator Script System: Hooks, Retention &amp; Packaging That Work"</b></td>
+          <td>Creator Script System pack</td>
+          <td>Creator scripts are the most "broken by generic AI" use case; ebook = framework, pack = templates.</td>
+        </tr>
+        <tr>
+          <td class="num">5</td>
+          <td><b>"AI Pair Programming: From Prompt to Production (Without Shipping Hallucinations)"</b></td>
+          <td>Dev/Analyst Prompt Pack (code, debugging, SQL)</td>
+          <td>Developers pay most; the ebook solves the trust problem (verification workflows, production-safety prompts).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="t">Bundle rule</div>
+    Every ebook ships with its matching prompt pack (ebook $9.99 → add pack for +$19 → bundle $24.99–$29.99), and every prompt pack ships with a 10-page "How to use these prompts" micro-guide so nothing feels like bare text.
+  </div>
+</section>
+
+<!-- ================= 6. PRICING ================= -->
+<section id="pricing">
+  <div class="section-head"><span class="section-num">6</span><h2>Pricing Insights — What Buyers Will Pay</h2></div>
+  <p class="section-sub">Documented buyer expectations vs. recommended launch prices.</p>
+
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="prod">Single prompts</div>
+      <p class="expect">$1.99–$5 (PromptBase standard; seen as a "convenience charge"; buyers call context-free singles "sketchy").</p>
+      <div class="rec">Avoid as core product <small>— use as loss leader / lead magnet</small></div>
+    </div>
+    <div class="price-card">
+      <div class="prod">Starter prompt packs (10–20)</div>
+      <p class="expect">$9–$19 "entry-level"; a seller's niche 10-prompt pack at $12 outsold his 50-prompt pack at $7 (3× sales).</p>
+      <div class="rec">$12–$17</div>
+    </div>
+    <div class="price-card">
+      <div class="prod">Professional niche packs (20–50)</div>
+      <p class="expect">$19–$49 documented sweet spot; dev packs $20–$99; teachers pay $19 for role packs; "a $47 pack often outperforms a $19 pack" (quality signaling).</p>
+      <div class="rec">$19–$29 <small>(anchor $27)</small></div>
+    </div>
+    <div class="price-card">
+      <div class="prod">Mega libraries (100+)</div>
+      <p class="expect">$49–$99 exist but are <i>mocked</i> as bloat — "10,000 prompts" = suspicion, not value.</p>
+      <div class="rec">Avoid <small>— sell niche, not volume</small></div>
+    </div>
+    <div class="price-card">
+      <div class="prod">Ebooks (short practical guides)</div>
+      <p class="expect">Readers: $0.99–$1.99 = "lesser product"; $2.99–$4.99 = indie sweet spot; $5–$10 fine when trusted; $10+ only for known authors; $43 academic ebooks rejected.</p>
+      <div class="rec">$4.99–$9.99 <small>— above "cheap" floor, impulse-friendly</small></div>
+    </div>
+    <div class="price-card">
+      <div class="prod">Bundles (ebook + prompt pack)</div>
+      <p class="expect">Market leaders: Midas Mega $29, AI Prompt Engineer Bundle $49, 30k-prompt bundle $49.99; low-ticket $7–$14 bundles sell with bonus stacks.</p>
+      <div class="rec">$24.99–$39.99 <small>(anchor $29)</small></div>
+    </div>
+    <div class="price-card">
+      <div class="prod">Subscriptions / updates</div>
+      <p class="expect">$10–$30/mo exists; buyers demand updates because "prompts break when models update."</p>
+      <div class="rec">Optional $10–$19/mo <small>— "prompt updates + new packs"</small></div>
+    </div>
+    <div class="price-card">
+      <div class="prod">Courses</div>
+      <p class="expect">$149+ = "scam" perception; free resources (docs, YouTube, learnprompting) set the bar at ~$0.</p>
+      <div class="rec">Don't sell at launch</div>
+    </div>
+  </div>
+
+  <h3>Cross-cutting pricing rules</h3>
+  <ul class="clean">
+    <li><b>Niche beats volume:</b> "Tight, niche-specific packs with real tested examples" outsell "broad, generic packs covering too many topics at once."</li>
+    <li><b>Never price prompts as bare text</b> — package with usage instructions, example outputs, and a documented workflow: "buyers are paying for expertise, structure, and time savings — not just text."</li>
+    <li><b>Below $2.99 signals garbage</b> for ebooks; below $9 signals a "random list" for prompt packs.</li>
+    <li><b>Regional pricing matters</b> — students and developing markets explicitly complain about US pricing; a modest regional discount expands the market.</li>
+    <li><b>Guarantees and updates defuse the two biggest objections</b> — "prompts break" and "it's a scam."</li>
+  </ul>
+</section>
+
+<!-- ================= 7. PRODUCT MAPPING ================= -->
+<section id="mapping">
+  <div class="section-head"><span class="section-num">7</span><h2>Product-Type Mapping — Prompts vs. Ebooks vs. Bundles</h2></div>
+  <p class="section-sub">Which pain points are best solved by prompts, which by ebooks, and which by bundles — plus the store-operations promises that underpin all of it.</p>
+
+  <div class="map-row"><div class="theme">1 · Vague prompts → generic output</div><div class="type type-pack">Prompt pack + micro-guide</div><div class="why">The buyer wants copy-paste solutions now; a 10-page "how to customize" guide prevents the "didn't work" refund.</div></div>
+  <div class="map-row"><div class="theme">2 · Editing tax / voice</div><div class="type type-bundle">Bundle (ebook + pack)</div><div class="why">Voice/style is a <i>skill</i> (ebook), constraints are <i>artifacts</i> (pack). This is the flagship bundle.</div></div>
+  <div class="map-row"><div class="theme">3 · Hallucination &amp; accuracy fear</div><div class="type type-bundle">Bundle (ebook + pack)</div><div class="why">High-stakes roles (law, dev, hiring) need both the prompts <i>and</i> the trust protocol.</div></div>
+  <div class="map-row"><div class="theme">4 · Ebook price fatigue</div><div class="type type-ebook">Ebook</div><div class="why">Directly competes with $15–43 Kindle pricing; position "under a coffee, over a deal-hunt."</div></div>
+  <div class="map-row"><div class="theme">5 · Ebook quality crisis</div><div class="type type-ebook">Ebook + trust signals</div><div class="why">Differentiate on editing/professional quality; free chapter samples, visible review standards.</div></div>
+  <div class="map-row"><div class="theme">6 · The 300-page textbook problem</div><div class="type type-ebook">Ebook (30–80 pages)</div><div class="why">Core positioning: "no 300-page textbooks — finish it in a weekend, apply it Monday."</div></div>
+  <div class="map-row"><div class="theme">7 · Delivery &amp; format friction</div><div class="type type-ops">Store operations</div><div class="why">Both PDF+EPUB every time, instant delivery, human support, re-download links, mobile-friendly. Biggest trust killer; cheapest to fix.</div></div>
+  <div class="map-row"><div class="theme">8 · Marketplace skepticism</div><div class="type type-bundle">Bundle + transparency</div><div class="why">Tested prompts with example outputs, update policy, refund guarantee, free samples — prove value before purchase.</div></div>
+
+  <h3>Launch catalog — first 60 days</h3>
+  <div class="catalog">
+    <div class="cat-card">
+      <span class="cat-num">Product 1</span>
+      <h4>Freelance Client Machine</h4>
+      <div class="prices"><span class="p">Pack <b>$17</b></span><span class="p">Ebook <b>$9.99</b></span><span class="p">Bundle <b>$24.99</b></span></div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-num">Product 2</span>
+      <h4>Copy That Converts (Marketers / Copywriters)</h4>
+      <div class="prices"><span class="p">Pack <b>$19</b></span><span class="p">Ebook <b>$9.99</b></span><span class="p">Bundle <b>$27</b></span></div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-num">Product 3</span>
+      <h4>Small Business AI Playbook</h4>
+      <div class="prices"><span class="p">Pack <b>$19</b></span><span class="p">Ebook <b>$9.99</b></span><span class="p">Bundle <b>$27</b></span></div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-num">Product 4</span>
+      <h4>Creator Script System</h4>
+      <div class="prices"><span class="p">Pack <b>$17</b></span><span class="p">Ebook <b>$9.99</b></span><span class="p">Bundle <b>$24.99</b></span></div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-num">Product 5</span>
+      <h4>AI Pair Programming (Devs / Analysts)</h4>
+      <div class="prices"><span class="p">Pack <b>$27</b></span><span class="p">Ebook <b>$12.99</b></span><span class="p">Bundle <b>$37</b></span></div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-num">Storefront essentials</span>
+      <h4>Trust &amp; delivery layer</h4>
+      <p class="ev" style="font-size:13px;color:var(--muted);margin-top:6px;">Free 5-prompt sample per category (lead magnets) · PDF + EPUB on every ebook · Notion-friendly prompt sheets · instant delivery + re-download page · human email support · 14-day "it didn't work" refund · free prompt-update emails.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. SOURCES ================= -->
+<section id="sources">
+  <div class="section-head"><span class="section-num">8</span><h2>Source Index</h2></div>
+  <p class="section-sub">Platforms and communities where the pain points were documented.</p>
+
+  <div class="src-block">
+    <p><b>Reddit (25+ subreddits):</b> r/ChatGPT (yes-man thread; "everyone uses it like Google"; "ruined me as a programmer"; student discount/regional pricing), r/ChatGPTPromptGenius ("prompt engineering is the new copywriting"; freelance prompts; teacher pack; YouTube script prompt), r/copywriting (ChatGPT quality), r/freelance (first proposal), r/Freelancers (100+ prompts), r/marketing (intro to team; agency fired writers), r/webdev ("incompetent or do I suck"), r/programming (not replacing devs), r/singularity (CEO claim), r/Teachers (prompt list + $19 pack; "why waste time writing lesson plans"), r/LawFirm (2d-guessed by clients; ChatGPT at work), r/Lawyertalk (ChatGPT in practice; how many use it), r/recruiting (JD writing painful; ChatGPT ruining applications via r/UNpath), r/CAStateWorkers (hiring manager can tell), r/OpenAI (pay for prompt course?; basic prompt terrible answers; prompt engineering not the job of the future), r/ArtificialInteligence (why generic), r/PromptEngineering ("Prompt Engineering is a scam"; libraries worth the $?; why you shouldn't take it seriously), r/StableDiffusion (prompt selling), r/SideProject (100 SMB prompts), r/kindle (expensive books ×6; ebook quality horrible; KU yay/nay; no book over $10), r/ebooks + r/Frugal + r/books (free/cheap ebooks; acceptable pricing), r/selfpublish (Amazon removing poor quality; ebook pricing help; KU consensus), r/books (self-pub quality; KU worth it), r/Fantasy (right price for ebook), r/learnprogramming (books vs tutorials; textbooks), r/CollegeRant (online textbooks), r/Professors (students won't buy), r/Etsy + r/EtsySellers (digital download not received; digital vs physical confusion), r/Piracy + r/humblebundles + r/systweakpdfeditor (format preferences), r/Notion + r/productivity (prompt organization), r/EntrepreneurRideAlong ($14k selling prompts).</p>
+    <p><b>Quora:</b> "How to write better prompts for ChatGPT to improve the results" (quora.com).</p>
+    <p><b>LinkedIn:</b> prompt-workflow posts ("AI-generated posts that fail typically fail because the prompt was generic" — gptprompts.ai FAQ; Ruben Hassid headshot prompts post; eWeek "12 AI Prompt Templates Every Professional Should Bookmark").</p>
+    <p><b>X / Twitter:</b> Zack Shapiro — "Prompt Engineering Isn't Dead. You're Just Doing It Wrong" (x.com/zackbshapiro).</p>
+    <p><b>Facebook groups:</b> AI Prompts for Entrepreneurs (488K), ChatGPT for business owners, AI for content creators, ChatGPT Prompts etc. (50K) — dynamics documented via promptquest.com and aiprofitboardroom.com (engagement-bait + algorithm complaints).</p>
+    <p><b>AI communities:</b> Hacker News "Ask HN: Is prompt engineering just snake oil?" (news.ycombinator.com/item?id=35665168); r/LocalLLaMA-adjacent threads.</p>
+    <p><b>Marketplace / review platforms:</b> PromptBase prompt guidelines (decline reasons, AI-generated prompt policy); Trustpilot Gumroad reviews; BBB Gumroad complaints; Etsy digital prompt listings.</p>
+    <p><b>Industry / seller-side data (pricing benchmarks):</b> greyjournal.net (selling AI prompts 2026: $29–69 bundles, PromptBase 20%, $4.99 cap), ilmilog.com (Etsy ban, $25–60 pricing), midastools.co (7 prompt packs compared: $29/$49), dodopayments.com (pack pricing table: $9–19 / $19–49 / $49–99; "$47 pack outperforms $19"), medium.com (niche 10-pack at $12 vs 50-pack at $7), r/selfpublish pricing threads ($2.99–4.99 sweet spot), r/books acceptable pricing ($5–10).</p>
+  </div>
+</section>
+
+<footer class="report-footer">
+  <span>Step 1 — Market Research &amp; Audience Pain Points · Digital Marketplace Launch Plan</span>
+  <span>Prepared Aug 25, 2026 · Markdown source version kept alongside this file</span>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Freelance Client Machine: Money, Scope & Hard Conversations
+
+### Scope-creep response
+Write a reply to [CLIENT] who asked for [EXTRA WORK] that falls outside our agreement covering [ORIGINAL SCOPE]. Acknowledge the request, explain it's outside the agreed scope, and offer to do it as a paid addition at GH₵ [AMOUNT] (or X hours at my rate). Give them a simple yes/no choice. Tone: helpful, not apologetic, no guilt-tripping. Under 120 words.
+
+### Invoice chase - first reminder
+Write a friendly first reminder for invoice [#NUMBER] of GH₵ [AMOUNT] for [PROJECT], due [DATE]. Assume it's an oversight, not malice. Two sentences: one referencing the invoice, one asking if they need anything to process it. Add the payment details again. Tone: light, zero accusation.
+
+### Invoice chase - firm final notice
+Write a firm final invoice notice for [#NUMBER] of GH₵ [AMOUNT], [X] days overdue. State: (1) the facts - invoice number, date, amount, reminders sent, (2) a deadline of [DATE] for payment, (3) the consequence if not paid by then: work pauses and late fee of [X]% applies. Tone: professional, calm, final. Under 150 words.
+

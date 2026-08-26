@@ -1,0 +1,11 @@
+SMB Operator: Marketing, Reviews & Local Growth
+
+### Google review reply - positive
+Write a reply to this Google review: '[REVIEW TEXT]' from [CUSTOMER NAME]. Thank them by name, mention one specific detail from their review, invite them back with a small hook ([LOYALTY OFFER - e.g. 10% off next visit]), and keep it under 60 words. Warm, human, no corporate phrases like 'we appreciate your feedback'.
+
+### Google review reply - negative
+Write a reply to this negative review: '[REVIEW TEXT]'. Rules: (1) apologize for the specific experience without grovelling, (2) state the facts calmly if the review is inaccurate, (3) offer a concrete fix offline (phone/visit), (4) never argue or mention the reviewer's tone. Under 80 words. End with an invitation to give us another chance.
+
+### Review request to happy customers
+Write a short message asking [CUSTOMER] for a Google review after [WHAT THEY BOUGHT]. Make it easy: (1) one line on why reviews help a small business like ours, (2) a direct link, (3) a one-question prompt: 'What would you tell a friend about us?'. Optionally offer a small thank-you ([INCENTIVE]). Under 60 words, text-message friendly.
+

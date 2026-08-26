@@ -1,0 +1,11 @@
+Complete Copy & Content System
+
+### Positioning statement
+Build a positioning statement for [PRODUCT/SERVICE]. Audience: [AUDIENCE]. Category: [CATEGORY]. Key benefit: [BENEFIT]. Key difference vs [COMPETITORS]: [DIFFERENCE]. Output: one sentence following 'For [AUDIENCE] who [PAIN], [PRODUCT] is the [CATEGORY] that [BENEFIT], unlike [ALTERNATIVE] because [DIFFERENCE]'.
+
+### Campaign brief
+Write a one-page campaign brief for [OFFER]: objective (awareness/traffic/sales), audience with 3 pains, core message, proof points, channels [LIST], budget GH₵ [AMOUNT], timeline [WEEKS], success metric, and 3 creative angles. Keep it skimmable - an agency could execute it without asking questions.
+
+### Channel-by-channel message map
+For the campaign [BRIEF SUMMARY], write the adapted message for: email (150 words), Instagram/Facebook post (70 words), LinkedIn post (200 words), landing page hero (30 words), WhatsApp broadcast (50 words). Same core promise, different containers. Note the channel-specific tweak for each.
+

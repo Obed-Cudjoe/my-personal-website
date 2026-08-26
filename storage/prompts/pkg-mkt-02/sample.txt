@@ -1,0 +1,11 @@
+Copy That Converts: Content, Social & SEO
+
+### SEO blog post outline
+Create a detailed outline for a blog post targeting the keyword '[KEYWORD]' for [AUDIENCE]. Include: (1) 3 search-intent-matched title options under 60 chars, (2) an H2/H3 skeleton with the angle for each section, (3) the specific question each section answers, (4) places to add internal links to [EXISTING POSTS], (5) a FAQ block with 3 questions people also ask. Also list what the SERP results for this keyword currently cover and how we'll be more useful.
+
+### Blog post from outline
+Write the first draft of the blog post using this outline: [PASTE OUTLINE]. Target: [WORD COUNT] words for [AUDIENCE]. Rules: (1) open with the reader's problem, not 'in today's world', (2) one idea per paragraph, (3) include 3 concrete examples with real numbers, (4) no fluff transitions ('it's important to note'), (5) end with 3 actionable takeaways + 1 question for comments. Write in [TONE].
+
+### Content repurposing chain
+Here is a blog post: [PASTE]. Repurpose it into: (1) a 10-post social thread with hooks, (2) a 30-second video script, (3) a newsletter teaser (80 words), (4) a LinkedIn post with a contrarian take from the content, (5) 3 quote cards with the strongest lines. Keep the core message identical across all - just change the container.
+

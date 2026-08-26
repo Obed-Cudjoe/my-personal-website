@@ -1,0 +1,11 @@
+Freelance Business Engine (Full System)
+
+### Weekly client pipeline review
+Act as a freelance business coach. Here is my current pipeline: [PASTE: prospects, proposals, active projects, invoices with statuses]. Review it and tell me: (1) the single highest-leverage action this week, (2) which proposal is most likely to close and why, (3) which client is most at risk and why, (4) what to automate or delegate. Be blunt, no flattery.
+
+### Ideal client profile
+Build me an ideal client profile for [MY SERVICE]. Include: industries that need this most, company size, the person I should talk to, the top 3 problems they feel daily, the words they use to describe those problems, where they hang out online, and the #1 objection they'll have to hiring me. Based on this, write 5 opening lines for outreach messages.
+
+### Outreach sprint - 10 personalized messages
+Here are 10 prospects with one line each about them: [PASTE LIST]. For each, write a 3-sentence cold message: sentence 1 names something specific about them/their business, sentence 2 connects it to one thing I do, sentence 3 asks one small question. No templates, no 'I hope this finds you well'. Vary the openings so no two sound alike.
+
