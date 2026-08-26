@@ -1,0 +1,11 @@
+Creator Script System: Hooks & Long-Form
+
+### Hook bank - 10 options
+Write 10 hook options for a video about [TOPIC] for [AUDIENCE]. Use these patterns, 2 each: (1) shocking/contrarian statement, (2) specific number or result, (3) 'everyone's wrong about X' take, (4) open loop/question, (5) personal stake ('I almost gave up on X'). Max 15 words each. Mark the 2 strongest for a 0-3 second cold open. No 'hey guys', no 'in this video'.
+
+### Retention beat sheet
+Create a beat sheet for a [X]-minute video on [TOPIC]. Structure: 0:00-0:20 hook + promise, 0:20-1:00 stakes/credibility, then 3-5 main beats each with: the point, the example, the retention device (open loop, payoff tease, pattern interrupt), and approximate timestamps. Add 1 counterpoint beat (address the obvious objection). End: recap + specific next-video tease.
+
+### Full script from beat sheet
+Write the full script from this beat sheet: [PASTE]. [X] minutes spoken (~[WORD COUNT] words). Rules: (1) write for the ear - short sentences, contractions, words you'd actually say, (2) no stage directions, no headings, (3) no filler transitions, (4) one concrete detail per beat, (5) end on the tease. Tone: [TONE].
+

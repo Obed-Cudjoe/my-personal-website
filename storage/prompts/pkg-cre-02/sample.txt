@@ -1,0 +1,11 @@
+Creator Script System: Shorts, Titles & Thumbnails
+
+### Shorts script - 30 seconds
+Write a 30-second Shorts script on [TOPIC] for [AUDIENCE]. Beat structure: 0-3s hook (question or claim), 3-10s the promise, 10-22s two quick points with examples, 22-30s payoff + follow CTA. Spoken-word style, short sentences. Add a caption line and on-screen text suggestion per beat.
+
+### Title CTR bank
+Write 12 title options for a video about [TOPIC] using these formats, 3 each: number/list ('7 signs…'), curiosity gap ('the reason nobody tells you…'), contrarian ('stop doing X'), and result ('how I…'). Under 60 characters each. For the top 3, say which viewer emotion each targets.
+
+### Thumbnail concept generator
+Generate 8 thumbnail concepts for the video '[TITLE]'. For each: focal subject, facial expression/emotion, background, text overlay (max 3 words), composition note, and why it would earn the click. Avoid cliches: red arrows, shocked-face cliches, text that duplicates the title.
+

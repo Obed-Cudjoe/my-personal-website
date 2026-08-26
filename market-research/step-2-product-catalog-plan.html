@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 2 — Product Catalog Plan &amp; Pricing Strategy | Digital Marketplace Launch Plan</title>
+<style>
+  :root {
+    --navy: #0f1b33;
+    --navy-2: #14264a;
+    --indigo: #3b5bdb;
+    --accent: #12b886;
+    --accent-soft: #e6faf2;
+    --amber: #f59f00;
+    --amber-soft: #fff4d6;
+    --red: #e03131;
+    --red-soft: #ffe3e3;
+    --blue: #1c7ed6;
+    --blue-soft: #e7f5ff;
+    --purple: #7048e8;
+    --purple-soft: #f0ebff;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --bg: #ffffff;
+    --bg-soft: #f8fafc;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(15,27,51,.08), 0 8px 24px rgba(15,27,51,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink); background: var(--bg-soft); line-height: 1.6; font-size: 15px;
+  }
+  .page { max-width: 1080px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* Header */
+  .report-header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 55%, #1c3d8f 100%);
+    color: #fff; border-radius: 0 0 18px 18px; padding: 56px 24px 48px; margin-bottom: 40px;
+  }
+  .report-header .inner { max-width: 1080px; margin: 0 auto; }
+  .eyebrow {
+    display: inline-block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: #9fb6e8; font-weight: 700; margin-bottom: 14px; border: 1px solid rgba(159,182,232,.35);
+    padding: 4px 12px; border-radius: 999px;
+  }
+  .report-header h1 { font-size: 34px; line-height: 1.2; font-weight: 800; letter-spacing: -.01em; max-width: 900px; }
+  .report-header h1 .step { color: var(--accent); }
+  .report-header .subtitle { margin-top: 14px; font-size: 17px; color: #c9d6f2; max-width: 800px; }
+  .meta-chips { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 6px 14px; border-radius: 999px; font-size: 13px; color: #e8eefc; }
+  .chip b { color: #fff; font-weight: 700; }
+
+  /* Stats */
+  .stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin: -20px auto 40px; padding: 0 24px; max-width: 1080px; }
+  .stat-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+  .stat-card .num { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1.1; }
+  .stat-card .num span { color: var(--accent); }
+  .stat-card .lbl { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+
+  /* TOC */
+  .toc { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 32px; margin-bottom: 44px; }
+  .toc h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 16px; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px 24px; }
+  .toc a { display: flex; gap: 10px; align-items: baseline; color: var(--ink); text-decoration: none; padding: 7px 10px; border-radius: 8px; font-size: 14.5px; }
+  .toc a:hover { background: var(--bg-soft); color: var(--indigo); }
+  .toc .n { color: var(--accent); font-weight: 800; font-size: 13px; min-width: 22px; }
+
+  /* Sections */
+  section { margin-bottom: 52px; }
+  .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .section-num { background: var(--navy); color: #fff; font-weight: 800; font-size: 14px; width: 34px; height: 34px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  h2 { font-size: 24px; font-weight: 800; color: var(--navy); letter-spacing: -.01em; }
+  .section-sub { color: var(--muted); font-size: 14.5px; margin: 0 0 22px 48px; }
+  h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin: 28px 0 12px; }
+  .lead { background: var(--bg-soft); border-left: 4px solid var(--indigo); padding: 16px 20px; border-radius: 0 10px 10px 0; margin-bottom: 24px; font-size: 15px; }
+
+  .callout { background: var(--accent-soft); border: 1px solid #b2ecd7; border-radius: var(--radius); padding: 18px 22px; margin: 22px 0; }
+  .callout.amber { background: var(--amber-soft); border-color: #f5d78e; }
+  .callout.blue { background: var(--blue-soft); border-color: #b3d9f2; }
+  .callout.red { background: var(--red-soft); border-color: #f3b3b3; }
+  .callout .t { font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; color: var(--navy); }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); margin: 14px 0 22px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.8px; min-width: 680px; }
+  thead th { background: var(--navy); color: #fff; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; padding: 12px 14px; white-space: nowrap; }
+  tbody td { padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  tbody tr:nth-child(even) { background: var(--bg-soft); }
+  tbody tr:hover { background: #eef4ff; }
+  td.sku { font-weight: 800; color: var(--indigo); white-space: nowrap; font-size: 12.5px; }
+  td.price { font-weight: 800; color: var(--navy); white-space: nowrap; }
+  td.usd { color: var(--muted); white-space: nowrap; font-size: 12.5px; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 800; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .b-cat { background: var(--purple-soft); color: var(--purple); }
+  .b-format { background: var(--bg-soft); border: 1px solid var(--line); color: var(--muted); }
+
+  /* Category blocks */
+  .cat-block { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 24px; margin-bottom: 16px; }
+  .cat-block .cat-title { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+  .cat-block .cat-icon { width: 38px; height: 38px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; background: var(--navy); color: #fff; }
+  .cat-block h4 { font-size: 16.5px; font-weight: 800; color: var(--navy); }
+  .cat-block .cat-tagline { font-size: 13.5px; color: var(--muted); margin: 0 0 12px 50px; }
+
+  /* Ebook cards */
+  .ebook-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 26px; margin-bottom: 16px; display: grid; grid-template-columns: 120px 1fr; gap: 20px; }
+  .ebook-cover {
+    width: 120px; height: 160px; border-radius: 8px; flex-shrink: 0; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; color: #fff;
+  }
+  .ec-fre { background: linear-gradient(160deg, #0f1b33 55%, #1c3d8f); }
+  .ec-mkt { background: linear-gradient(160deg, #ffffff 0%, #f3f6fb 60%, #dbe4f3); color: var(--navy); }
+  .ec-smb { background: linear-gradient(160deg, #f59f00 0%, #e67700); }
+  .ec-cre { background: linear-gradient(160deg, #171a23 0%, #25324d); }
+  .ec-dev { background: linear-gradient(160deg, #1a1f2b 0%, #0d3b2e 140%); }
+  .ebook-cover .cov-title { font-size: 11.5px; font-weight: 800; line-height: 1.3; letter-spacing: .01em; }
+  .ebook-cover .cov-bar { width: 26px; height: 4px; border-radius: 2px; background: var(--accent); margin: 8px auto; }
+  .ebook-cover .cov-sub { font-size: 8.5px; opacity: .85; line-height: 1.3; }
+  .ebook-info h4 { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .ebook-info .one-liner { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+  .ebook-specs { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 10px; }
+  .spec { font-size: 12px; font-weight: 700; background: var(--bg-soft); border: 1px solid var(--line); padding: 4px 10px; border-radius: 8px; color: var(--ink); }
+  .spec b { color: var(--indigo); }
+  .ebook-toc { background: var(--bg-soft); border-radius: 10px; padding: 12px 16px; font-size: 13.5px; }
+  .ebook-toc .t { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+  .ebook-toc ol { margin-left: 18px; }
+  .ebook-toc li { margin-bottom: 3px; }
+  .cover-desc { font-size: 12.5px; color: var(--muted); margin-top: 8px; font-style: italic; }
+
+  /* Bundle cards */
+  .bundle-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 26px; margin-bottom: 16px; }
+  .bundle-card .bundle-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .bundle-card h4 { font-size: 17px; font-weight: 800; color: var(--navy); }
+  .bundle-card .save-badge { background: var(--accent); color: #fff; font-weight: 800; font-size: 13px; padding: 5px 14px; border-radius: 999px; }
+  .bundle-card ul { margin: 10px 0 10px 20px; font-size: 14px; }
+  .bundle-card ul li { margin-bottom: 4px; }
+  .bundle-price-row { display: flex; align-items: baseline; gap: 14px; margin-top: 8px; flex-wrap: wrap; }
+  .bundle-price-row .val { font-size: 14px; color: var(--muted); text-decoration: line-through; }
+  .bundle-price-row .bprice { font-size: 24px; font-weight: 800; color: var(--navy); }
+  .bundle-price-row .save { font-size: 14px; font-weight: 700; color: var(--accent); }
+  .fmt-line { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+
+  /* Lead magnets */
+  .lead-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .lead-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px; position: relative; }
+  .lead-card .free-flag { position: absolute; top: -10px; right: 16px; background: var(--red); color: #fff; font-size: 11px; font-weight: 800; padding: 3px 12px; border-radius: 999px; }
+  .lead-card h4 { font-size: 15.5px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .lead-card p { font-size: 13.8px; color: var(--muted); margin-bottom: 8px; }
+
+  /* Checklists */
+  .check-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+  .check-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 24px; }
+  .check-card h4 { font-size: 15.5px; font-weight: 800; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .check-card ul { list-style: none; }
+  .check-card li { padding-left: 30px; position: relative; font-size: 13.8px; margin-bottom: 9px; color: var(--ink); }
+  .check-card li::before {
+    content: "✓"; position: absolute; left: 0; top: 0; width: 19px; height: 19px; border-radius: 6px;
+    background: var(--accent-soft); color: var(--accent); font-weight: 800; font-size: 12px;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+
+  /* Roadmap */
+  .wave { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 24px; margin-bottom: 14px; border-left: 5px solid var(--indigo); }
+  .wave.w2 { border-left-color: var(--purple); } .wave.w3 { border-left-color: var(--amber); } .wave.w4 { border-left-color: var(--accent); }
+  .wave h4 { font-size: 15.5px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .wave .when { font-size: 12px; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .06em; }
+  .wave ul { margin: 8px 0 0 20px; font-size: 13.8px; }
+  .wave li { margin-bottom: 4px; }
+
+  ul.clean, ol.clean { margin: 8px 0 16px 22px; }
+  ul.clean li, ol.clean li { margin-bottom: 7px; font-size: 14.5px; }
+
+  .report-footer { margin-top: 60px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12.5px; color: var(--muted); }
+
+  @media print { body { background: #fff; font-size: 12px; } .report-header { border-radius: 0; } .table-wrap, .ebook-card, .bundle-card, .lead-card, .check-card, .wave, .toc, .stat-card, .callout, .cat-block { box-shadow: none; } a { color: inherit; text-decoration: none; } }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="inner">
+    <span class="eyebrow">Digital Marketplace — Launch Plan · Step 2 of 5</span>
+    <h1>Product Catalog Plan &amp; <span class="step">Pricing Strategy</span></h1>
+    <p class="subtitle">The complete launch inventory: 15 prompt packs across 5 job categories, 5 practical ebooks, 3 bundles at a visible discount, free lead magnets, quality standards — and the roadmap to scale it.</p>
+    <div class="meta-chips">
+      <span class="chip"><b>Date:</b> Aug 25, 2026</span>
+      <span class="chip"><b>Inventory:</b> 25 sellable products + 2 lead magnets</span>
+      <span class="chip"><b>Currency:</b> GH₵ · ≈ $1 = GH₵ 11.15</span>
+      <span class="chip"><b>Total catalog value:</b> GH₵ 2,710</span>
+    </div>
+  </div>
+</header>
+
+<div class="stat-strip">
+  <div class="stat-card"><div class="num">15</div><div class="lbl">Prompt packs · 5 job categories</div></div>
+  <div class="stat-card"><div class="num">5</div><div class="lbl">Ebooks · 36–52 pages each</div></div>
+  <div class="stat-card"><div class="num">3</div><div class="lbl">Bundles · ~27% off</div></div>
+  <div class="stat-card"><div class="num">2</div><div class="lbl">Free lead magnets</div></div>
+  <div class="stat-card"><div class="num">GH₵ 2,710</div><div class="lbl">Catalog value at individual prices</div></div>
+</div>
+
+<div class="page">
+
+<nav class="toc" aria-label="Table of contents">
+  <h3>Contents</h3>
+  <div class="toc-grid">
+    <a href="#summary"><span class="n">0</span> Executive Summary</a>
+    <a href="#pricing-philosophy"><span class="n">1</span> Pricing Philosophy</a>
+    <a href="#packs"><span class="n">2</span> Prompt Pack Catalog (15)</a>
+    <a href="#ebooks"><span class="n">3</span> Ebook Catalog (5)</a>
+    <a href="#bundles"><span class="n">4</span> Bundle Catalog (3)</a>
+    <a href="#leadmagnets"><span class="n">5</span> Lead Magnets</a>
+    <a href="#quality"><span class="n">6</span> Quality Standard Checklists</a>
+    <a href="#pricing"><span class="n">7</span> Master Pricing Table</a>
+    <a href="#roadmap"><span class="n">8</span> Expansion Roadmap</a>
+    <a href="#checklist"><span class="n">9</span> Launch Checklist</a>
+  </div>
+</nav>
+
+<!-- 0. SUMMARY -->
+<section id="summary">
+  <div class="section-head"><span class="section-num">0</span><h2>Executive Summary</h2></div>
+  <p class="section-sub">What the store sells on day one, and why.</p>
+  <p class="lead">The launch catalog contains <b>15 prompt packs across 5 job categories, 5 practical ebooks (36–52 pages), 3 bundles, and 2 lead magnets</b> — 25 sellable products plus a free funnel. Structure follows the Step 1 research: niche over volume, tiered price points per category, ebooks positioned as the premium "method" products (priced above packs, per catalog spec), and bundles at a visible ~27% discount. Every product ships quality-checked (Word + PDF for packs, PDF + EPUB for ebooks), and the SKU system is built to scale across future categories.</p>
+</section>
+
+<!-- 1. PRICING PHILOSOPHY -->
+<section id="pricing-philosophy">
+  <div class="section-head"><span class="section-num">1</span><h2>Pricing Philosophy</h2></div>
+  <p class="section-sub">How Step 1 research principles become prices.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Research principle (Step 1)</th><th>How it shows up in this catalog</th></tr></thead>
+      <tbody>
+        <tr><td>Niche beats volume</td><td>Packs are 12–45 prompts per single job task — never "10,000 mega packs."</td></tr>
+        <tr><td>Tiered options per category</td><td>Starter packs (12–15 prompts) → System packs (35–45 prompts) → Ebook (premium method).</td></tr>
+        <tr><td>Ebooks priced higher than packs</td><td>Per catalog spec, ebooks carry the full method + workbook and are the premium product in each category (GH₵ 165–245 vs packs GH₵ 75–225).</td></tr>
+        <tr><td>Below-cheap signals garbage</td><td>No product below GH₵ 75 (~$6.7); free lead magnets are clearly "samples," not products.</td></tr>
+        <tr><td>Bundles at visible discount</td><td>~26–27% off combined value on every bundle.</td></tr>
+        <tr><td>Regional pricing</td><td>Local-currency prices set for Ghanaian purchasing power; USD storefront in Wave 3.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <div class="t">Why ebooks cost more than packs</div>
+    A prompt pack is a tool (copy-paste, 15–45 items); an ebook is a system (method + walkthroughs + checklists + the prompts embedded). The spec requires ebook &gt; pack, and this is defensible: ebooks remain far below the $17–43 Kindle price-fatigue zone documented in Step 1, and every ebook ships with a free first chapter to de-risk purchase.
+  </div>
+</section>
+
+<!-- 2. PROMPT PACKS -->
+<section id="packs">
+  <div class="section-head"><span class="section-num">2</span><h2>Prompt Pack Catalog — 15 Packs Across 5 Job Categories</h2></div>
+  <p class="section-sub">Format standard: Word (.docx) + PDF · each prompt on its own page · monospace prompt blocks · SKU prefix <b>PKG-</b>.</p>
+
+  <div class="cat-block">
+    <div class="cat-title"><span class="cat-icon">💼</span><h4>Freelancers &amp; Solopreneurs <span class="badge b-cat">PKG-FRE</span></h4></div>
+    <p class="cat-tagline">"I win clients and stop losing money to scope creep."</p>
+    <div class="table-wrap" style="box-shadow:none;margin:0;">
+      <table>
+        <thead><tr><th>SKU</th><th>Pack name</th><th>One-line description</th><th>Prompts</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td class="sku">PKG-FRE-01</td><td><b>Freelance Client Machine: Outreach &amp; Proposals</b></td><td>15 copy-paste prompts for cold outreach, proposals, discovery calls, and follow-ups that don't sound like AI.</td><td>15</td><td class="price">GH₵ 75</td></tr>
+          <tr><td class="sku">PKG-FRE-02</td><td><b>Freelance Client Machine: Money, Scope &amp; Hard Conversations</b></td><td>15 prompts for rate negotiations, scope-creep replies, invoice chasing, and "no" messages — firm, never rude.</td><td>15</td><td class="price">GH₵ 85</td></tr>
+          <tr><td class="sku">PKG-FRE-03</td><td><b>Freelance Business Engine (Full System)</b></td><td>The complete 40-prompt system: outreach → proposal → pricing → delivery → testimonial → retention, with a weekly AI routine.</td><td>40</td><td class="price">GH₵ 145</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title"><span class="cat-icon">📣</span><h4>Marketers &amp; Copywriters <span class="badge b-cat">PKG-MKT</span></h4></div>
+    <p class="cat-tagline">"Copy that converts without screaming 'ChatGPT.'"</p>
+    <div class="table-wrap" style="box-shadow:none;margin:0;">
+      <table>
+        <thead><tr><th>SKU</th><th>Pack name</th><th>One-line description</th><th>Prompts</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td class="sku">PKG-MKT-01</td><td><b>Copy That Converts: Ads &amp; Emails</b></td><td>15 prompts for ad headlines, hooks, sales emails, and landing-page copy built on proven direct-response patterns.</td><td>15</td><td class="price">GH₵ 85</td></tr>
+          <tr><td class="sku">PKG-MKT-02</td><td><b>Copy That Converts: Content, Social &amp; SEO</b></td><td>15 prompts for blog structures, social captions, SEO briefs, and content calendars that keep one consistent voice.</td><td>15</td><td class="price">GH₵ 85</td></tr>
+          <tr><td class="sku">PKG-MKT-03</td><td><b>The Complete Copy &amp; Content System</b></td><td>The full 45-prompt marketing system: positioning → campaigns → copy → content → repurposing → performance review.</td><td>45</td><td class="price">GH₵ 165</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title"><span class="cat-icon">🏪</span><h4>Small Business Owners <span class="badge b-cat">PKG-SMB</span></h4></div>
+    <p class="cat-tagline">"Marketing, reviews &amp; ops in your spare time."</p>
+    <div class="table-wrap" style="box-shadow:none;margin:0;">
+      <table>
+        <thead><tr><th>SKU</th><th>Pack name</th><th>One-line description</th><th>Prompts</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td class="sku">PKG-SMB-01</td><td><b>SMB Operator: Marketing, Reviews &amp; Local Growth</b></td><td>15 prompts for social posts, Google reviews, local ads, and customer-win-back messages for busy owners.</td><td>15</td><td class="price">GH₵ 85</td></tr>
+          <tr><td class="sku">PKG-SMB-02</td><td><b>SMB Operator: Ops, Service &amp; Admin</b></td><td>15 prompts for SOPs, job descriptions, refund policies, customer replies, and weekly planning.</td><td>15</td><td class="price">GH₵ 85</td></tr>
+          <tr><td class="sku">PKG-SMB-03</td><td><b>SMB Complete Playbook</b></td><td>The full 35-prompt system: marketing + service + ops + finance basics, with a 30-minutes-a-week routine.</td><td>35</td><td class="price">GH₵ 155</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title"><span class="cat-icon">🎬</span><h4>Content Creators <span class="badge b-cat">PKG-CRE</span></h4></div>
+    <p class="cat-tagline">"Scripts that hold retention and sound like you."</p>
+    <div class="table-wrap" style="box-shadow:none;margin:0;">
+      <table>
+        <thead><tr><th>SKU</th><th>Pack name</th><th>One-line description</th><th>Prompts</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td class="sku">PKG-CRE-01</td><td><b>Creator Script System: Hooks &amp; Long-Form</b></td><td>12 prompts for retention-structured hooks, beat sheets, and 8–12 minute scripts with anti-generic constraints.</td><td>12</td><td class="price">GH₵ 75</td></tr>
+          <tr><td class="sku">PKG-CRE-02</td><td><b>Creator Script System: Shorts, Titles &amp; Thumbnails</b></td><td>15 prompts for Shorts scripts, CTR titles, thumbnail concepts, and packaging that stops the scroll.</td><td>15</td><td class="price">GH₵ 85</td></tr>
+          <tr><td class="sku">PKG-CRE-03</td><td><b>Creator Complete System</b></td><td>The full 35-prompt system: ideas → research → scripts → packaging → repurposing → analytics.</td><td>35</td><td class="price">GH₵ 155</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title"><span class="cat-icon">💻</span><h4>Developers &amp; Data Analysts <span class="badge b-cat">PKG-DEV</span></h4></div>
+    <p class="cat-tagline">"From prompt to production without shipping hallucinations."</p>
+    <div class="table-wrap" style="box-shadow:none;margin:0;">
+      <table>
+        <thead><tr><th>SKU</th><th>Pack name</th><th>One-line description</th><th>Prompts</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td class="sku">PKG-DEV-01</td><td><b>AI Pair Programmer: Code, Debug &amp; Review</b></td><td>20 prompts for generating, debugging, and reviewing code with context-stuffing and test-first instructions.</td><td>20</td><td class="price">GH₵ 145</td></tr>
+          <tr><td class="sku">PKG-DEV-02</td><td><b>SQL &amp; Data Analysis Prompt Pack</b></td><td>15 prompts for schema-aware SQL generation, query optimization, EDA, and executive summaries.</td><td>15</td><td class="price">GH₵ 115</td></tr>
+          <tr><td class="sku">PKG-DEV-03</td><td><b>Production-Safe Dev System</b></td><td>The full 40-prompt system: architecture → implementation → verification → deployment checks, with anti-hallucination protocols.</td><td>40</td><td class="price">GH₵ 225</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout amber">
+    <div class="t">Pack tier logic</div>
+    Starter packs (12–15 prompts, GH₵ 75–115) remove friction for first-time buyers; System packs (35–45 prompts, GH₵ 145–225) anchor the category and feed the bundles. Developers pay the premium (highest ROI, per Step 1 research).
+  </div>
+</section>
+
+<!-- 3. EBOOKS -->
+<section id="ebooks">
+  <div class="section-head"><span class="section-num">3</span><h2>Ebook Catalog — 5 Practical Ebooks (36–52 Pages)</h2></div>
+  <p class="section-sub">Format standard: PDF (6×9 print-ready) + EPUB (reflowable, DRM-free) · SKU prefix <b>EBK-</b> · Author: Obed Cudjoe · Publisher: Cudjoe Digital Studio.</p>
+
+  <div class="ebook-card">
+    <div class="ebook-cover ec-fre"><div><div class="cov-title">THE FREELANCER'S AI CLIENT MACHINE</div><div class="cov-bar"></div><div class="cov-sub">Proposals, outreach &amp; money talks that close</div></div></div>
+    <div class="ebook-info">
+      <h4>EBK-FRE-01 — The Freelancer's AI Client Machine</h4>
+      <p class="one-liner">The complete method for winning clients and handling money talks with AI — proposals, scope, rates, and follow-ups that close.</p>
+      <div class="ebook-specs"><span class="spec">40 pages</span><span class="spec">6 chapters</span><span class="spec">Category: <b>Freelancers &amp; Solopreneurs</b></span><span class="spec">Formats: <b>PDF + EPUB</b></span><span class="spec">Price: <b>GH₵ 175</b></span></div>
+      <div class="ebook-toc">
+        <div class="t">Table of contents</div>
+        <ol>
+          <li>Why Your AI Proposals Fail (and the 4-line fix) — 5 pp</li>
+          <li>The Client Machine Method: Context → Constraint → Voice — 8 pp</li>
+          <li>Outreach &amp; Proposals That Win — 7 pp</li>
+          <li>Money Talks: Scope, Rates &amp; Difficult Conversations — 7 pp</li>
+          <li>The Prompt Workbench: 15 Core Prompts, Explained — 8 pp</li>
+          <li>The 7-Day Implementation Plan — 5 pp</li>
+        </ol>
+      </div>
+      <p class="cover-desc">Cover: minimalist navy cover; white line illustration of a laptop with a handshake above it; bold white title with a teal accent underline.</p>
+    </div>
+  </div>
+
+  <div class="ebook-card">
+    <div class="ebook-cover ec-mkt"><div><div class="cov-title">HUMAN-SOUNDING AI COPY</div><div class="cov-bar"></div><div class="cov-sub">Writing that doesn't scream "ChatGPT"</div></div></div>
+    <div class="ebook-info">
+      <h4>EBK-MKT-01 — Human-Sounding AI Copy</h4>
+      <p class="one-liner">How to make AI write copy that doesn't scream "ChatGPT" — voice briefs, de-AI editing, and prompt patterns for ads, emails, and landing pages.</p>
+      <div class="ebook-specs"><span class="spec">36 pages</span><span class="spec">5 chapters</span><span class="spec">Category: <b>Marketers &amp; Copywriters</b></span><span class="spec">Formats: <b>PDF + EPUB</b></span><span class="spec">Price: <b>GH₵ 185</b></span></div>
+      <div class="ebook-toc">
+        <div class="t">Table of contents</div>
+        <ol>
+          <li>The AI Tell: Why Everyone Recognizes ChatGPT Copy — 6 pp</li>
+          <li>The Voice Brief: Teaching AI Your Brand Voice in 10 Minutes — 8 pp</li>
+          <li>The De-AI Editing Pass: 3 Rounds to Human — 8 pp</li>
+          <li>Prompt Patterns for Ads, Emails &amp; Landing Pages — 8 pp</li>
+          <li>Your Voice Library: Checklists &amp; 30-Day Plan — 6 pp</li>
+        </ol>
+      </div>
+      <p class="cover-desc">Cover: clean white cover; a speech bubble dissolving into handwriting strokes in coral; navy title text.</p>
+    </div>
+  </div>
+
+  <div class="ebook-card">
+    <div class="ebook-cover ec-smb"><div><div class="cov-title">THE SMALL BUSINESS AI PLAYBOOK</div><div class="cov-bar"></div><div class="cov-sub">Marketing, reviews &amp; ops in your spare time</div></div></div>
+    <div class="ebook-info">
+      <h4>EBK-SMB-01 — The Small Business AI Playbook</h4>
+      <p class="one-liner">A 2-hour setup plus a 30-minute weekly routine that lets AI handle marketing, reviews, customer service, and admin for your business.</p>
+      <div class="ebook-specs"><span class="spec">44 pages</span><span class="spec">6 chapters</span><span class="spec">Category: <b>Small Business Owners</b></span><span class="spec">Formats: <b>PDF + EPUB</b></span><span class="spec">Price: <b>GH₵ 175</b></span></div>
+      <div class="ebook-toc">
+        <div class="t">Table of contents</div>
+        <ol>
+          <li>The 2-Hour AI Setup for Busy Owners — 6 pp</li>
+          <li>Marketing That Runs Itself (Social, Ads, Reviews) — 8 pp</li>
+          <li>Customer Service Without Hiring — 7 pp</li>
+          <li>Ops &amp; Admin: SOPs, Invoices, Scheduling — 7 pp</li>
+          <li>The SMB Prompt Library: 15 Core Prompts — 9 pp</li>
+          <li>Your Weekly 30-Minute AI Routine — 7 pp</li>
+        </ol>
+      </div>
+      <p class="cover-desc">Cover: warm amber cover with a simple storefront illustration; bold navy title; checklist motif along the bottom edge.</p>
+    </div>
+  </div>
+
+  <div class="ebook-card">
+    <div class="ebook-cover ec-cre"><div><div class="cov-title">THE CREATOR SCRIPT SYSTEM</div><div class="cov-bar"></div><div class="cov-sub">Hooks, retention &amp; packaging that work</div></div></div>
+    <div class="ebook-info">
+      <h4>EBK-CRE-01 — The Creator Script System</h4>
+      <p class="one-liner">A retention-first scripting framework — hooks, beat sheets, Shorts, titles, and thumbnails — so your videos stop sounding like everyone else's.</p>
+      <div class="ebook-specs"><span class="spec">40 pages</span><span class="spec">6 chapters</span><span class="spec">Category: <b>Content Creators</b></span><span class="spec">Formats: <b>PDF + EPUB</b></span><span class="spec">Price: <b>GH₵ 165</b></span></div>
+      <div class="ebook-toc">
+        <div class="t">Table of contents</div>
+        <ol>
+          <li>Why Generic Scripts Die in the First 15 Seconds — 5 pp</li>
+          <li>The Retention Map: Hooks, Loops &amp; Payoffs — 8 pp</li>
+          <li>Long-Form Scripting That Sounds Like You — 7 pp</li>
+          <li>Shorts, Titles &amp; Thumbnails: Packaging That Stops the Scroll — 8 pp</li>
+          <li>The Creator Prompt Workbench — 7 pp</li>
+          <li>From Script to Upload: Your Weekly System — 5 pp</li>
+        </ol>
+      </div>
+      <p class="cover-desc">Cover: dark charcoal cover with a glowing play-button and waveform line art; electric blue title; subtle grid background.</p>
+    </div>
+  </div>
+
+  <div class="ebook-card">
+    <div class="ebook-cover ec-dev"><div><div class="cov-title">AI PAIR PROGRAMMING</div><div class="cov-bar"></div><div class="cov-sub">Prompt to production, safely</div></div></div>
+    <div class="ebook-info">
+      <h4>EBK-DEV-01 — AI Pair Programming: From Prompt to Production</h4>
+      <p class="one-liner">The engineer's handbook for using AI safely — context-rich code prompts, debugging workflows, SQL, and a verification protocol that catches hallucinations before they ship.</p>
+      <div class="ebook-specs"><span class="spec">52 pages</span><span class="spec">7 chapters</span><span class="spec">Category: <b>Developers &amp; Data Analysts</b></span><span class="spec">Formats: <b>PDF + EPUB</b></span><span class="spec">Price: <b>GH₵ 245</b></span></div>
+      <div class="ebook-toc">
+        <div class="t">Table of contents</div>
+        <ol>
+          <li>The Right Mental Model for Pairing with an LLM — 6 pp</li>
+          <li>Prompting for Code: Context, Constraints, Tests — 9 pp</li>
+          <li>Debugging &amp; Code Review Workflows — 8 pp</li>
+          <li>SQL &amp; Data Analysis: Queries That Answer Real Questions — 8 pp</li>
+          <li>The Verification Protocol: Catching Hallucinations — 7 pp</li>
+          <li>Production Safety: What to Never Ship Blind — 7 pp</li>
+          <li>Your Dev Prompt Library &amp; Team Playbook — 7 pp</li>
+        </ol>
+      </div>
+      <p class="cover-desc">Cover: dark slate cover with a code-editor window motif and terminal-green accents; monospace title type; "production-safe" badge icon.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="t">Page-count check</div>
+    All ebooks (36–52 pages) sit inside the required 20–60 page range — short enough to finish in a weekend, long enough to be worth more than a blog post.
+  </div>
+</section>
+
+<!-- 4. BUNDLES -->
+<section id="bundles">
+  <div class="section-head"><span class="section-num">4</span><h2>Bundle Catalog — 3 Bundles at ~27% Off</h2></div>
+  <p class="section-sub">Bundle rule: System pack + starter pack (bonus) + matching ebook. Bundled files keep their native formats: packs in Word + PDF, ebooks in PDF + EPUB.</p>
+
+  <div class="bundle-card">
+    <div class="bundle-head">
+      <h4>BND-MKT-01 — Complete Marketing AI Toolkit</h4>
+      <span class="save-badge">Save 27%</span>
+    </div>
+    <ul>
+      <li><b>PKG-MKT-03</b> Complete Copy &amp; Content System — 45 prompts</li>
+      <li><b>PKG-MKT-02</b> Content, Social &amp; SEO — 15 prompts <i>(bonus)</i></li>
+      <li><b>EBK-MKT-01</b> Human-Sounding AI Copy — 36-page ebook</li>
+    </ul>
+    <div class="bundle-price-row">
+      <span class="val">GH₵ 435 combined value</span>
+      <span class="bprice">GH₵ 319</span>
+      <span class="save">You save GH₵ 116 (27%)</span>
+    </div>
+    <p class="fmt-line">Formats: Word + PDF (packs) · PDF + EPUB (ebook) · ≈ $28.60</p>
+  </div>
+
+  <div class="bundle-card">
+    <div class="bundle-head">
+      <h4>BND-FRE-01 — Freelance Growth Bundle</h4>
+      <span class="save-badge">Save 27%</span>
+    </div>
+    <ul>
+      <li><b>PKG-FRE-03</b> Freelance Business Engine — 40 prompts</li>
+      <li><b>PKG-FRE-01</b> Outreach &amp; Proposals — 15 prompts <i>(bonus)</i></li>
+      <li><b>EBK-FRE-01</b> The Freelancer's AI Client Machine — 40-page ebook</li>
+    </ul>
+    <div class="bundle-price-row">
+      <span class="val">GH₵ 395 combined value</span>
+      <span class="bprice">GH₵ 289</span>
+      <span class="save">You save GH₵ 106 (27%)</span>
+    </div>
+    <p class="fmt-line">Formats: Word + PDF (packs) · PDF + EPUB (ebook) · ≈ $25.90</p>
+  </div>
+
+  <div class="bundle-card">
+    <div class="bundle-head">
+      <h4>BND-CRE-01 — Creator Launch Bundle</h4>
+      <span class="save-badge">Save 26%</span>
+    </div>
+    <ul>
+      <li><b>PKG-CRE-03</b> Creator Complete System — 35 prompts</li>
+      <li><b>PKG-CRE-02</b> Shorts, Titles &amp; Thumbnails — 15 prompts <i>(bonus)</i></li>
+      <li><b>EBK-CRE-01</b> The Creator Script System — 40-page ebook</li>
+    </ul>
+    <div class="bundle-price-row">
+      <span class="val">GH₵ 405 combined value</span>
+      <span class="bprice">GH₵ 299</span>
+      <span class="save">You save GH₵ 106 (26%)</span>
+    </div>
+    <p class="fmt-line">Formats: Word + PDF (packs) · PDF + EPUB (ebook) · ≈ $26.80</p>
+  </div>
+
+  <div class="callout blue">
+    <div class="t">Scheduled bundles</div>
+    SMB and Dev bundles (BND-SMB-01, BND-DEV-01) are scheduled for Wave 2 — assembled from existing inventory, no new content needed. An <b>All-Access Launch Bundle</b> (everything: GH₵ 2,710 value → ~GH₵ 1,899, 30% off) is planned for Wave 3.
+  </div>
+</section>
+
+<!-- 5. LEAD MAGNETS -->
+<section id="leadmagnets">
+  <div class="section-head"><span class="section-num">5</span><h2>Lead Magnets — Free Samples That Sell the Quality</h2></div>
+  <p class="section-sub">Visitors test the exact quality they'll pay for before buying. Free samples are the #1 de-risker in a market that distrusts prompt products and ebook quality (Step 1 themes 5 &amp; 8).</p>
+  <div class="lead-grid">
+    <div class="lead-card">
+      <span class="free-flag">FREE</span>
+      <h4>FRE-01 — "5 Free Freelance Prompts That Actually Work"</h4>
+      <p>5 full-quality prompts (outreach, proposal, scope-creep reply, invoice chase, testimonial ask), each with context instructions, placeholders, and one example output — the same standard as paid packs.</p>
+      <p><b>Formats:</b> PDF + Word · <b>Gate:</b> email capture · <b>Placement:</b> home hero, category pages, social bios.</p>
+    </div>
+    <div class="lead-card">
+      <span class="free-flag">FREE</span>
+      <h4>FRE-02 — Free Ebook Chapter + Mini-Ebook</h4>
+      <p>Chapter 1 of <i>The Freelancer's AI Client Machine</i> ("Why Your AI Proposals Fail," 5 pages, full quality) <b>plus</b> a 12-page mini-ebook, <i>The Prompt Recipe: Write Any Prompt in 4 Steps</i> (Context → Constraint → Voice → Output format).</p>
+      <p><b>Formats:</b> PDF · <b>Gate:</b> email capture · <b>Placement:</b> checkout exit-intent, blog posts, ebook product pages (Chapter 1 preview on every ebook page).</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. QUALITY -->
+<section id="quality">
+  <div class="section-head"><span class="section-num">6</span><h2>Quality Standard Checklists</h2></div>
+  <p class="section-sub">Every product passes its checklist before it appears in the store.</p>
+  <div class="check-grid">
+    <div class="check-card">
+      <h4>📦 Prompt pack quality standards</h4>
+      <ul>
+        <li><b>Context instructions</b> — every prompt includes explicit role, goal, audience, tone, and output constraints; no bare instructions.</li>
+        <li><b>Variable placeholders</b> — inputs in <code>[BRACKETED]</code> placeholders with one-line fill-in instructions.</li>
+        <li><b>Example outputs</b> — each prompt ships with at least one annotated sample output.</li>
+        <li><b>Consistent formatting</b> — uniform template: Title · When to use · The prompt · How to customize · Example output; monospace prompt blocks; one prompt per page.</li>
+        <li><b>Anti-generic constraints</b> — banned-phrase lists and output-format specs kill the "AI tell."</li>
+        <li><b>Testing</b> — every prompt tested on ChatGPT, Claude, and Gemini; limitations documented in a README.</li>
+        <li><b>Value test</b> — passes Step 1's rule: "the user cannot get 80% of this value by asking the AI directly."</li>
+        <li><b>Files</b> — Word (.docx) + PDF, no watermarks, print-safe, with a copy-paste plain-text section.</li>
+        <li><b>Updates</b> — changelog + 12 months of free prompt updates by email.</li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h4>📖 Ebook quality standards</h4>
+      <ul>
+        <li><b>Clear table of contents</b> — chapter list with page numbers; hyperlinked in the EPUB.</li>
+        <li><b>Cover page</b> — designed cover, title page, copyright/disclaimer page, author/about page.</li>
+        <li><b>Professional formatting</b> — consistent H1/H2/H3 hierarchy, no orphaned headings, consistent spacing, page numbers.</li>
+        <li><b>Readable fonts</b> — body ≥ 11pt, 1.5 line spacing, comfortable margins; EPUB tested on Kindle, Kobo, Apple Books.</li>
+        <li><b>Consistent headings</b> — every chapter opens with number + title; one section style throughout.</li>
+        <li><b>Actionable content on every page</b> — each page carries at least one takeaway, template, prompt, or checklist; zero filler pages.</li>
+        <li><b>Chapter structure</b> — 5–7 chapters per book; every chapter ends with "Action Steps."</li>
+        <li><b>Editing pass</b> — two-pass human proofread; zero typos; AI-tell-free writing.</li>
+        <li><b>Formats</b> — PDF (6×9 print-ready) + EPUB (reflowable, DRM-free).</li>
+        <li><b>Sample</b> — Chapter 1 free on the product page.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PRICING TABLE -->
+<section id="pricing">
+  <div class="section-head"><span class="section-num">7</span><h2>Master Pricing Table</h2></div>
+  <p class="section-sub">Individual prices for every product + bundle discounts. USD at ≈ 11.15 GHS/USD (mid-market, Aug 2026).</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>SKU</th><th>Product</th><th>Type</th><th>Category</th><th>Price (GH₵)</th><th>≈ USD</th></tr></thead>
+      <tbody>
+        <tr><td class="sku">PKG-FRE-01</td><td>Outreach &amp; Proposals</td><td>Pack (15)</td><td>Freelance</td><td class="price">75</td><td class="usd">$6.75</td></tr>
+        <tr><td class="sku">PKG-FRE-02</td><td>Money, Scope &amp; Hard Conversations</td><td>Pack (15)</td><td>Freelance</td><td class="price">85</td><td class="usd">$7.60</td></tr>
+        <tr><td class="sku">PKG-FRE-03</td><td>Freelance Business Engine</td><td>Pack (40)</td><td>Freelance</td><td class="price">145</td><td class="usd">$13.00</td></tr>
+        <tr><td class="sku">PKG-MKT-01</td><td>Ads &amp; Emails</td><td>Pack (15)</td><td>Marketing</td><td class="price">85</td><td class="usd">$7.60</td></tr>
+        <tr><td class="sku">PKG-MKT-02</td><td>Content, Social &amp; SEO</td><td>Pack (15)</td><td>Marketing</td><td class="price">85</td><td class="usd">$7.60</td></tr>
+        <tr><td class="sku">PKG-MKT-03</td><td>Complete Copy &amp; Content System</td><td>Pack (45)</td><td>Marketing</td><td class="price">165</td><td class="usd">$14.80</td></tr>
+        <tr><td class="sku">PKG-SMB-01</td><td>Marketing, Reviews &amp; Local Growth</td><td>Pack (15)</td><td>SMB</td><td class="price">85</td><td class="usd">$7.60</td></tr>
+        <tr><td class="sku">PKG-SMB-02</td><td>Ops, Service &amp; Admin</td><td>Pack (15)</td><td>SMB</td><td class="price">85</td><td class="usd">$7.60</td></tr>
+        <tr><td class="sku">PKG-SMB-03</td><td>SMB Complete Playbook</td><td>Pack (35)</td><td>SMB</td><td class="price">155</td><td class="usd">$13.90</td></tr>
+        <tr><td class="sku">PKG-CRE-01</td><td>Hooks &amp; Long-Form</td><td>Pack (12)</td><td>Creators</td><td class="price">75</td><td class="usd">$6.75</td></tr>
+        <tr><td class="sku">PKG-CRE-02</td><td>Shorts, Titles &amp; Thumbnails</td><td>Pack (15)</td><td>Creators</td><td class="price">85</td><td class="usd">$7.60</td></tr>
+        <tr><td class="sku">PKG-CRE-03</td><td>Creator Complete System</td><td>Pack (35)</td><td>Creators</td><td class="price">155</td><td class="usd">$13.90</td></tr>
+        <tr><td class="sku">PKG-DEV-01</td><td>Code, Debug &amp; Review</td><td>Pack (20)</td><td>Dev/Analyst</td><td class="price">145</td><td class="usd">$13.00</td></tr>
+        <tr><td class="sku">PKG-DEV-02</td><td>SQL &amp; Data Analysis</td><td>Pack (15)</td><td>Dev/Analyst</td><td class="price">115</td><td class="usd">$10.30</td></tr>
+        <tr><td class="sku">PKG-DEV-03</td><td>Production-Safe Dev System</td><td>Pack (40)</td><td>Dev/Analyst</td><td class="price">225</td><td class="usd">$20.20</td></tr>
+        <tr><td class="sku">EBK-FRE-01</td><td>The Freelancer's AI Client Machine</td><td>Ebook (40 pp)</td><td>Freelance</td><td class="price">175</td><td class="usd">$15.70</td></tr>
+        <tr><td class="sku">EBK-MKT-01</td><td>Human-Sounding AI Copy</td><td>Ebook (36 pp)</td><td>Marketing</td><td class="price">185</td><td class="usd">$16.60</td></tr>
+        <tr><td class="sku">EBK-SMB-01</td><td>The Small Business AI Playbook</td><td>Ebook (44 pp)</td><td>SMB</td><td class="price">175</td><td class="usd">$15.70</td></tr>
+        <tr><td class="sku">EBK-CRE-01</td><td>The Creator Script System</td><td>Ebook (40 pp)</td><td>Creators</td><td class="price">165</td><td class="usd">$14.80</td></tr>
+        <tr><td class="sku">EBK-DEV-01</td><td>AI Pair Programming</td><td>Ebook (52 pp)</td><td>Dev/Analyst</td><td class="price">245</td><td class="usd">$22.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Bundles — discount visibility</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>SKU</th><th>Bundle</th><th>Combined value</th><th>Bundle price</th><th>You save</th><th>Discount</th><th>≈ USD</th></tr></thead>
+      <tbody>
+        <tr><td class="sku">BND-MKT-01</td><td>Complete Marketing AI Toolkit</td><td class="price">GH₵ 435</td><td class="price">GH₵ 319</td><td>GH₵ 116</td><td><span class="badge" style="background:var(--accent-soft);color:#0b8a62;">27%</span></td><td class="usd">$28.60</td></tr>
+        <tr><td class="sku">BND-FRE-01</td><td>Freelance Growth Bundle</td><td class="price">GH₵ 395</td><td class="price">GH₵ 289</td><td>GH₵ 106</td><td><span class="badge" style="background:var(--accent-soft);color:#0b8a62;">27%</span></td><td class="usd">$25.90</td></tr>
+        <tr><td class="sku">BND-CRE-01</td><td>Creator Launch Bundle</td><td class="price">GH₵ 405</td><td class="price">GH₵ 299</td><td>GH₵ 106</td><td><span class="badge" style="background:var(--accent-soft);color:#0b8a62;">26%</span></td><td class="usd">$26.80</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="t">Bundle check vs. research</div>
+    Bundle prices in USD terms ($25.90–$28.60) land inside the Step 1 research sweet spot of $24.99–$39.99. Ebooks individually ($14.80–$22) stay below the $17–43 price-fatigue zone while remaining the premium product per spec.
+  </div>
+</section>
+
+<!-- 8. ROADMAP -->
+<section id="roadmap">
+  <div class="section-head"><span class="section-num">8</span><h2>Future Catalog Expansion Roadmap</h2></div>
+  <p class="section-sub">How the catalog scales after launch — new categories, formats, subscriptions, and markets.</p>
+
+  <div class="wave">
+    <h4>Wave 1 — Launch <span class="when">· Weeks 0–4 · this catalog</span></h4>
+    <ul><li>15 prompt packs · 5 ebooks · 3 bundles · 2 lead magnets · storefront with instant delivery, PDF+EPUB, re-download page, human support, 14-day refund, free update emails.</li></ul>
+  </div>
+
+  <div class="wave w2">
+    <h4>Wave 2 — New categories &amp; formats <span class="when">· Weeks 5–10</span></h4>
+    <ul>
+      <li><b>HR/Recruiters category</b> (highest-evidence runner-up from Step 1): 2 starter packs (JD writer; interview &amp; screening) + 1 system pack + ebook <i>The Recruiter's AI Desk</i> (40 pp).</li>
+      <li><b>Teachers category:</b> 2 packs (lesson plans &amp; rubrics; parent emails &amp; admin) — Step 1 showed teachers already pay $19 for role packs.</li>
+      <li><b>Notion-ready versions</b> of the top 3 packs (CSV import + Notion template) — answers the "how do I organize prompts" pain.</li>
+      <li><b>BND-SMB-01</b> Small Business Bundle and <b>BND-DEV-01</b> Dev Bundle from existing inventory (no new content needed).</li>
+      <li>Paystack / MoMo checkout integration if not already at launch.</li>
+    </ul>
+  </div>
+
+  <div class="wave w3">
+    <h4>Wave 3 — Depth &amp; subscription <span class="when">· Months 3–4</span></h4>
+    <ul>
+      <li><b>Lawyers category:</b> 2 packs focused on safe drafting workflows (hallucination-avoidance) — high caution, high willingness to pay.</li>
+      <li><b>Second ebooks per category:</b> <i>Freelance Pricing Without Guessing</i> (FRE), <i>The Content Calendar That Runs Itself</i> (MKT), <i>Analytics for Creators</i> (CRE), <i>SQL Interview Prep</i> (DEV).</li>
+      <li><b>All-Access Launch Bundle:</b> everything at ~30% off (value GH₵ 2,710 → ~GH₵ 1,899).</li>
+      <li><b>Prompt Updates Club</b> subscription: GH₵ 99/month — quarterly prompt refreshes + 2 new packs/year (defuses staleness, builds recurring revenue).</li>
+      <li><b>International storefront:</b> USD pricing tier using research benchmarks ($9–19 starter packs, $19–29 systems, $24.99–39.99 bundles).</li>
+    </ul>
+  </div>
+
+  <div class="wave w4">
+    <h4>Wave 4 — Scale <span class="when">· Months 5+</span></h4>
+    <ul>
+      <li><b>Courses:</b> <i>Prompt Mastery for African Professionals</i> (GH₵ 499) built from the top ebook content.</li>
+      <li><b>Custom prompt service:</b> done-for-you packs from GH₵ 549 (high-margin, no inventory).</li>
+      <li><b>Community:</b> paid membership (GH₵ 79/month) with monthly prompt drops + live Q&amp;A.</li>
+      <li><b>Localization:</b> French (francophone West Africa) and Swahili editions of the top 3 ebooks; regional currency support (NGN, XOF).</li>
+      <li><b>Print-on-demand</b> versions of the top 2 ebooks for the local market.</li>
+    </ul>
+  </div>
+
+  <h3>How the catalog structure scales</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Element</th><th>Convention</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><b>SKU naming</b></td><td><code>PKG-{CAT}-{NN}</code> / <code>EBK-{CAT}-{NN}</code> / <code>BND-{CAT}-{NN}</code> / <code>FRE-{NN}</code></td><td>New categories just add a code (HR, TCH, LAW, CSM) — no restructuring.</td></tr>
+        <tr><td><b>File naming</b></td><td><code>{SKU}-{name-slug}-{lang}-{format}</code>, e.g. <code>PKG-FRE-03-freelance-business-engine-en-docx.pdf</code></td><td>Version-safe, store-ready, localization-ready.</td></tr>
+        <tr><td><b>Store folders</b></td><td><code>catalog/packs/</code> · <code>catalog/ebooks/</code> · <code>catalog/bundles/</code> · <code>catalog/free/</code> + inventory spreadsheet per folder (SKU, title, price, formats, status)</td><td>One source of truth; easy inventory audits.</td></tr>
+        <tr><td><b>Bundle rule</b></td><td>System pack + starter pack bonus + matching ebook at ~27% off</td><td>Repeatable template for every future category.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 9. LAUNCH CHECKLIST -->
+<section id="checklist">
+  <div class="section-head"><span class="section-num">9</span><h2>Launch Checklist — Before the Store Opens</h2></div>
+  <p class="section-sub">Everything that must exist before checkout goes live.</p>
+  <div class="check-grid">
+    <div class="check-card">
+      <h4>✅ Content production</h4>
+      <ul>
+        <li>Produce 15 prompt packs (Section 2) against the 6A quality checklist.</li>
+        <li>Produce 5 ebooks (Section 3) against the 6B quality checklist — cover art per description.</li>
+        <li>Assemble 3 bundles (Section 4) with correct file sets + combined-value badges.</li>
+        <li>Build 2 lead magnets (Section 5), gated behind email capture.</li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h4>✅ Store &amp; operations</h4>
+      <ul>
+        <li>Set storefront pricing (Section 7) with GH₵ + USD display.</li>
+        <li>Test delivery: instant download, re-download page, mobile view, email receipt.</li>
+        <li>Write the 14-day refund + free-updates policy pages.</li>
+        <li>Plan the Wave 2 content calendar (Section 8).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout blue" style="margin-top:16px;">
+    <div class="t">Next step</div>
+    This catalog defines <i>what</i> to build, in <i>what format</i>, and at <i>what price</i>. The next step is content production — writing the actual prompts and ebook manuscripts — following these quality standards.
+  </div>
+</section>
+
+<footer class="report-footer">
+  <span>Step 2 — Product Catalog Plan &amp; Pricing Strategy · Digital Marketplace Launch Plan</span>
+  <span>Prepared Aug 25, 2026 · Markdown source kept alongside this file</span>
+</footer>
+
+</div>
+</body>
+</html>

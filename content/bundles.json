@@ -1,0 +1,29 @@
+[
+  {
+    "id": "bnd-mkt-01",
+    "title": "Complete Marketing AI Toolkit",
+    "items": [
+      { "id": "pkg-mkt-03", "type": "pack" },
+      { "id": "pkg-mkt-02", "type": "pack" },
+      { "id": "ebk-mkt-01", "type": "ebook" }
+    ]
+  },
+  {
+    "id": "bnd-fre-01",
+    "title": "Freelance Growth Bundle",
+    "items": [
+      { "id": "pkg-fre-03", "type": "pack" },
+      { "id": "pkg-fre-01", "type": "pack" },
+      { "id": "ebk-fre-01", "type": "ebook" }
+    ]
+  },
+  {
+    "id": "bnd-cre-01",
+    "title": "Creator Launch Bundle",
+    "items": [
+      { "id": "pkg-cre-03", "type": "pack" },
+      { "id": "pkg-cre-02", "type": "pack" },
+      { "id": "ebk-cre-01", "type": "ebook" }
+    ]
+  }
+]
